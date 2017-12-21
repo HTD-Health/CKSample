@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4920834979DA2DEAC88D408F625CF600 /* Pods-BloodPressureTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A5060B7830C76FF207EB40B1E8E886 /* Pods-BloodPressureTests-dummy.m */; };
+		4EF1443F311B307311A6B68EB005F161 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6ABE4C3CF94FE8CB44D9AB72695815D4 /* Pods-BloodPressure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0941B2088D6FECFC6C057576B193595D /* Pods-BloodPressure-dummy.m */; };
+		DE9B3E67196D3B057E836AD5FB7E6166 /* Pods-BloodPressure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 35AAB131BFF19BD1481FD0BE8E7E6EE8 /* Pods-BloodPressure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3B73F8152822143D6FAD92F56DF9C0C /* Pods-BloodPressureTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F4FA5CD9F135E45BD70197C150F69B /* Pods-BloodPressureTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD912314CFE1428042E66047EEF3F482 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0941B2088D6FECFC6C057576B193595D /* Pods-BloodPressure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BloodPressure-dummy.m"; sourceTree = "<group>"; };
+		1C46EAFD6C74E845F36C2A0B8163D5F6 /* Pods_BloodPressure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BloodPressure.framework; path = "Pods-BloodPressure.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20BD8123FF3CE211111403A1A763F492 /* Pods-BloodPressureTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BloodPressureTests-frameworks.sh"; sourceTree = "<group>"; };
+		215E43FD4D477C5DEE4976BDDCCF7E5E /* Pods-BloodPressure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BloodPressure.debug.xcconfig"; sourceTree = "<group>"; };
+		23A5060B7830C76FF207EB40B1E8E886 /* Pods-BloodPressureTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BloodPressureTests-dummy.m"; sourceTree = "<group>"; };
+		2DA83E0601F40A8E1026722EEC42301D /* Pods-BloodPressure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BloodPressure.release.xcconfig"; sourceTree = "<group>"; };
+		35AAB131BFF19BD1481FD0BE8E7E6EE8 /* Pods-BloodPressure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BloodPressure-umbrella.h"; sourceTree = "<group>"; };
+		51109A25494E08B19E7A0A67016F94F6 /* Pods-BloodPressureTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BloodPressureTests.modulemap"; sourceTree = "<group>"; };
+		517D8BA57440A7A4B8D1946D5BFC1C80 /* Pods-BloodPressure-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BloodPressure-acknowledgements.plist"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8BF24DFF48EEC5AFF0E912FF1237DCE1 /* Pods-BloodPressure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BloodPressure.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96D07130C13DB79A0889E3086C881A46 /* Pods-BloodPressure-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BloodPressure-resources.sh"; sourceTree = "<group>"; };
+		9976D4848CEDA9FE7EBD8A5904A56585 /* Pods-BloodPressure-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BloodPressure-acknowledgements.markdown"; sourceTree = "<group>"; };
+		99F4FA5CD9F135E45BD70197C150F69B /* Pods-BloodPressureTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BloodPressureTests-umbrella.h"; sourceTree = "<group>"; };
+		9DD4CD52CAB80C055A401B4AF1A4870A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F15797347177B405C88588BB451F493 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F2FCEF2285859C664B541A565AFD2EA /* Pods-BloodPressureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BloodPressureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A838CE1A4399F987349F009F543AE32D /* Pods_BloodPressureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BloodPressureTests.framework; path = "Pods-BloodPressureTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7F2B36B42078DF23F1A6FF8B5AEF90A /* Pods-BloodPressureTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BloodPressureTests-resources.sh"; sourceTree = "<group>"; };
+		B8757E273C337C07A9BB5F661F881D6B /* Pods-BloodPressure-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BloodPressure-frameworks.sh"; sourceTree = "<group>"; };
+		EB19AA02F26C9C014E200439D27D8A05 /* Pods-BloodPressureTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BloodPressureTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		EE37C2D09E818BABE367F22D45E4D895 /* Pods-BloodPressureTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BloodPressureTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F8E2EDFD6966E3E5AA66C03352009ABB /* Pods-BloodPressureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BloodPressureTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0966A20601543008E7651CAC605A11FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF1443F311B307311A6B68EB005F161 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED57E03D47563DEB8179E7250A6A93E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD912314CFE1428042E66047EEF3F482 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32A23E08346748F1793F899C5FF672C1 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		39AA80496BD15164BF0E55631623CA78 /* Pods-BloodPressureTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F15797347177B405C88588BB451F493 /* Info.plist */,
+				51109A25494E08B19E7A0A67016F94F6 /* Pods-BloodPressureTests.modulemap */,
+				EE37C2D09E818BABE367F22D45E4D895 /* Pods-BloodPressureTests-acknowledgements.markdown */,
+				EB19AA02F26C9C014E200439D27D8A05 /* Pods-BloodPressureTests-acknowledgements.plist */,
+				23A5060B7830C76FF207EB40B1E8E886 /* Pods-BloodPressureTests-dummy.m */,
+				20BD8123FF3CE211111403A1A763F492 /* Pods-BloodPressureTests-frameworks.sh */,
+				B7F2B36B42078DF23F1A6FF8B5AEF90A /* Pods-BloodPressureTests-resources.sh */,
+				99F4FA5CD9F135E45BD70197C150F69B /* Pods-BloodPressureTests-umbrella.h */,
+				9F2FCEF2285859C664B541A565AFD2EA /* Pods-BloodPressureTests.debug.xcconfig */,
+				F8E2EDFD6966E3E5AA66C03352009ABB /* Pods-BloodPressureTests.release.xcconfig */,
+			);
+			name = "Pods-BloodPressureTests";
+			path = "Target Support Files/Pods-BloodPressureTests";
+			sourceTree = "<group>";
+		};
+		7BDF692845DE6C40A18CF9B44C4A239A /* Pods-BloodPressure */ = {
+			isa = PBXGroup;
+			children = (
+				9DD4CD52CAB80C055A401B4AF1A4870A /* Info.plist */,
+				8BF24DFF48EEC5AFF0E912FF1237DCE1 /* Pods-BloodPressure.modulemap */,
+				9976D4848CEDA9FE7EBD8A5904A56585 /* Pods-BloodPressure-acknowledgements.markdown */,
+				517D8BA57440A7A4B8D1946D5BFC1C80 /* Pods-BloodPressure-acknowledgements.plist */,
+				0941B2088D6FECFC6C057576B193595D /* Pods-BloodPressure-dummy.m */,
+				B8757E273C337C07A9BB5F661F881D6B /* Pods-BloodPressure-frameworks.sh */,
+				96D07130C13DB79A0889E3086C881A46 /* Pods-BloodPressure-resources.sh */,
+				35AAB131BFF19BD1481FD0BE8E7E6EE8 /* Pods-BloodPressure-umbrella.h */,
+				215E43FD4D477C5DEE4976BDDCCF7E5E /* Pods-BloodPressure.debug.xcconfig */,
+				2DA83E0601F40A8E1026722EEC42301D /* Pods-BloodPressure.release.xcconfig */,
+			);
+			name = "Pods-BloodPressure";
+			path = "Target Support Files/Pods-BloodPressure";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				9758CC519AE2C57A9659FFC01AAD26F9 /* Pods */,
+				A84DC1815657EE9711376489BB68A346 /* Products */,
+				8325D773C5F0AED5D77C6815F981DA13 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8325D773C5F0AED5D77C6815F981DA13 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7BDF692845DE6C40A18CF9B44C4A239A /* Pods-BloodPressure */,
+				39AA80496BD15164BF0E55631623CA78 /* Pods-BloodPressureTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9758CC519AE2C57A9659FFC01AAD26F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32A23E08346748F1793F899C5FF672C1 /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A84DC1815657EE9711376489BB68A346 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C46EAFD6C74E845F36C2A0B8163D5F6 /* Pods_BloodPressure.framework */,
+				A838CE1A4399F987349F009F543AE32D /* Pods_BloodPressureTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01E45EF2308D18FCA85A505C002BEA2B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3B73F8152822143D6FAD92F56DF9C0C /* Pods-BloodPressureTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD9BF68A076B72C888258380FB59B9C6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9B3E67196D3B057E836AD5FB7E6166 /* Pods-BloodPressure-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2942C9FBB99E7033A25927E4ACD19FBF /* Pods-BloodPressure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8872E8B44B9838D0F70C11D4AD744C98 /* Build configuration list for PBXNativeTarget "Pods-BloodPressure" */;
+			buildPhases = (
+				CC393B94498208DBDCAC1A2589AF2A19 /* Sources */,
+				ED57E03D47563DEB8179E7250A6A93E1 /* Frameworks */,
+				CD9BF68A076B72C888258380FB59B9C6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BloodPressure";
+			productName = "Pods-BloodPressure";
+			productReference = 1C46EAFD6C74E845F36C2A0B8163D5F6 /* Pods_BloodPressure.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9921FE8C2C4D3ACDBEC26A7AC88B4B88 /* Pods-BloodPressureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0739EFA62D042FF31E0A7453D4FE14AE /* Build configuration list for PBXNativeTarget "Pods-BloodPressureTests" */;
+			buildPhases = (
+				4465D15205BF9C2B87C465E312323051 /* Sources */,
+				0966A20601543008E7651CAC605A11FB /* Frameworks */,
+				01E45EF2308D18FCA85A505C002BEA2B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BloodPressureTests";
+			productName = "Pods-BloodPressureTests";
+			productReference = A838CE1A4399F987349F009F543AE32D /* Pods_BloodPressureTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = A84DC1815657EE9711376489BB68A346 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2942C9FBB99E7033A25927E4ACD19FBF /* Pods-BloodPressure */,
+				9921FE8C2C4D3ACDBEC26A7AC88B4B88 /* Pods-BloodPressureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4465D15205BF9C2B87C465E312323051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4920834979DA2DEAC88D408F625CF600 /* Pods-BloodPressureTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC393B94498208DBDCAC1A2589AF2A19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ABE4C3CF94FE8CB44D9AB72695815D4 /* Pods-BloodPressure-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		39C5BC78A31CDE101068C530CAC7FA0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5AB604C0E390CD6608F5212B5C4D7A4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F2FCEF2285859C664B541A565AFD2EA /* Pods-BloodPressureTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BloodPressureTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BloodPressureTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7B5A478DF7D8ECB4178870CF07EC9D8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DA83E0601F40A8E1026722EEC42301D /* Pods-BloodPressure.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BloodPressure/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BloodPressure/Pods-BloodPressure.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BloodPressure;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		89C8BB24E37B25BAEEB8FBA01EE05DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		937DAF82B3ADA414B4B504AE742725A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 215E43FD4D477C5DEE4976BDDCCF7E5E /* Pods-BloodPressure.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BloodPressure/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BloodPressure/Pods-BloodPressure.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BloodPressure;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B813E2DDDFA717499A47757D5A3C06A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8E2EDFD6966E3E5AA66C03352009ABB /* Pods-BloodPressureTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BloodPressureTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BloodPressureTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0739EFA62D042FF31E0A7453D4FE14AE /* Build configuration list for PBXNativeTarget "Pods-BloodPressureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB604C0E390CD6608F5212B5C4D7A4A /* Debug */,
+				B813E2DDDFA717499A47757D5A3C06A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39C5BC78A31CDE101068C530CAC7FA0F /* Debug */,
+				89C8BB24E37B25BAEEB8FBA01EE05DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8872E8B44B9838D0F70C11D4AD744C98 /* Build configuration list for PBXNativeTarget "Pods-BloodPressure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				937DAF82B3ADA414B4B504AE742725A4 /* Debug */,
+				7B5A478DF7D8ECB4178870CF07EC9D8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0469F21E396F53D1CC736E52 /* Pods_BloodPressure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FE9EB24A9DF053011A04F0 /* Pods_BloodPressure.framework */; };
 		8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */; };
 		8865CCD11FEC0C40009633D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCD01FEC0C40009633D1 /* ViewController.swift */; };
 		8865CCD41FEC0C40009633D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD21FEC0C40009633D1 /* Main.storyboard */; };
 		8865CCD61FEC0C40009633D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD51FEC0C40009633D1 /* Assets.xcassets */; };
 		8865CCD91FEC0C40009633D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */; };
 		8865CCE41FEC0C40009633D1 /* BloodPressureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCE31FEC0C40009633D1 /* BloodPressureTests.swift */; };
+		D98749830CD8D42146EA2810 /* Pods_BloodPressureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E663559BB5115739C08083 /* Pods_BloodPressureTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01FE9EB24A9DF053011A04F0 /* Pods_BloodPressure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BloodPressure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E663559BB5115739C08083 /* Pods_BloodPressureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BloodPressureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		306F39FCA5D07315479CA0B4 /* Pods-BloodPressureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		49D6C28BDD4D269D5AB386CA /* Pods-BloodPressureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C1B4E645D100CE81F45F399 /* Pods-BloodPressure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressure.release.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure.release.xcconfig"; sourceTree = "<group>"; };
 		8865CCCB1FEC0C40009633D1 /* BloodPressure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloodPressure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8865CCD01FEC0C40009633D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		8865CCDF1FEC0C40009633D1 /* BloodPressureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloodPressureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8865CCE31FEC0C40009633D1 /* BloodPressureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureTests.swift; sourceTree = "<group>"; };
 		8865CCE51FEC0C40009633D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B4D17917C094C73D15910D0 /* Pods-BloodPressure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0469F21E396F53D1CC736E52 /* Pods_BloodPressure.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98749830CD8D42146EA2810 /* Pods_BloodPressureTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,8 @@
 				8865CCCD1FEC0C40009633D1 /* BloodPressure */,
 				8865CCE21FEC0C40009633D1 /* BloodPressureTests */,
 				8865CCCC1FEC0C40009633D1 /* Products */,
+				A6145E5AB3FE08D6B5D7BEC2 /* Pods */,
+				FB5D9D51213A601B1D1C7D8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +108,26 @@
 			path = BloodPressureTests;
 			sourceTree = "<group>";
 		};
+		A6145E5AB3FE08D6B5D7BEC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B4D17917C094C73D15910D0 /* Pods-BloodPressure.debug.xcconfig */,
+				6C1B4E645D100CE81F45F399 /* Pods-BloodPressure.release.xcconfig */,
+				306F39FCA5D07315479CA0B4 /* Pods-BloodPressureTests.debug.xcconfig */,
+				49D6C28BDD4D269D5AB386CA /* Pods-BloodPressureTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB5D9D51213A601B1D1C7D8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01FE9EB24A9DF053011A04F0 /* Pods_BloodPressure.framework */,
+				13E663559BB5115739C08083 /* Pods_BloodPressureTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8865CCE81FEC0C40009633D1 /* Build configuration list for PBXNativeTarget "BloodPressure" */;
 			buildPhases = (
+				416BF351912BE85C244ADA06 /* [CP] Check Pods Manifest.lock */,
 				8865CCC71FEC0C40009633D1 /* Sources */,
 				8865CCC81FEC0C40009633D1 /* Frameworks */,
 				8865CCC91FEC0C40009633D1 /* Resources */,
+				4C9229B4DDF973B7EFFB4DE2 /* [CP] Embed Pods Frameworks */,
+				688A2BD382B421A30ACAF0F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8865CCEB1FEC0C40009633D1 /* Build configuration list for PBXNativeTarget "BloodPressureTests" */;
 			buildPhases = (
+				08A3A94C8298B92915BE95FD /* [CP] Check Pods Manifest.lock */,
 				8865CCDB1FEC0C40009633D1 /* Sources */,
 				8865CCDC1FEC0C40009633D1 /* Frameworks */,
 				8865CCDD1FEC0C40009633D1 /* Resources */,
+				AE42A730B899FBD90F75D298 /* [CP] Embed Pods Frameworks */,
+				1521D05A7BC4CEB3B529FB5B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +231,105 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08A3A94C8298B92915BE95FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BloodPressureTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1521D05A7BC4CEB3B529FB5B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		416BF351912BE85C244ADA06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BloodPressure-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C9229B4DDF973B7EFFB4DE2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		688A2BD382B421A30ACAF0F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE42A730B899FBD90F75D298 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8865CCC71FEC0C40009633D1 /* Sources */ = {
@@ -351,6 +488,7 @@
 		};
 		8865CCE91FEC0C40009633D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B4D17917C094C73D15910D0 /* Pods-BloodPressure.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,6 +504,7 @@
 		};
 		8865CCEA1FEC0C40009633D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C1B4E645D100CE81F45F399 /* Pods-BloodPressure.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -381,6 +520,7 @@
 		};
 		8865CCEC1FEC0C40009633D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 306F39FCA5D07315479CA0B4 /* Pods-BloodPressureTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -398,6 +538,7 @@
 		};
 		8865CCED1FEC0C40009633D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49D6C28BDD4D269D5AB386CA /* Pods-BloodPressureTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
