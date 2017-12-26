@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0469F21E396F53D1CC736E52 /* Pods_BloodPressure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FE9EB24A9DF053011A04F0 /* Pods_BloodPressure.framework */; };
+		881266021FED39070080C931 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881266001FED39070080C931 /* RootViewController.swift */; };
+		881266031FED39070080C931 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881266011FED39070080C931 /* RootViewController.xib */; };
+		881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881266041FED44DE0080C931 /* MainTabBarController.swift */; };
+		881266071FED44DE0080C931 /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881266051FED44DE0080C931 /* MainTabBarController.xib */; };
 		8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */; };
-		8865CCD11FEC0C40009633D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCD01FEC0C40009633D1 /* ViewController.swift */; };
-		8865CCD41FEC0C40009633D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD21FEC0C40009633D1 /* Main.storyboard */; };
-		8865CCD61FEC0C40009633D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD51FEC0C40009633D1 /* Assets.xcassets */; };
 		8865CCD91FEC0C40009633D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */; };
 		8865CCE41FEC0C40009633D1 /* BloodPressureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCE31FEC0C40009633D1 /* BloodPressureTests.swift */; };
 		D98749830CD8D42146EA2810 /* Pods_BloodPressureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E663559BB5115739C08083 /* Pods_BloodPressureTests.framework */; };
@@ -33,11 +34,12 @@
 		306F39FCA5D07315479CA0B4 /* Pods-BloodPressureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		49D6C28BDD4D269D5AB386CA /* Pods-BloodPressureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C1B4E645D100CE81F45F399 /* Pods-BloodPressure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressure.release.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure.release.xcconfig"; sourceTree = "<group>"; };
+		881266001FED39070080C931 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		881266011FED39070080C931 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		881266041FED44DE0080C931 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		881266051FED44DE0080C931 /* MainTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarController.xib; sourceTree = "<group>"; };
 		8865CCCB1FEC0C40009633D1 /* BloodPressure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloodPressure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8865CCD01FEC0C40009633D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8865CCD31FEC0C40009633D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8865CCD51FEC0C40009633D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8865CCD81FEC0C40009633D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8865CCDA1FEC0C40009633D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8865CCDF1FEC0C40009633D1 /* BloodPressureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloodPressureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,9 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */,
-				8865CCD01FEC0C40009633D1 /* ViewController.swift */,
-				8865CCD21FEC0C40009633D1 /* Main.storyboard */,
-				8865CCD51FEC0C40009633D1 /* Assets.xcassets */,
+				881266001FED39070080C931 /* RootViewController.swift */,
+				881266011FED39070080C931 /* RootViewController.xib */,
+				881266041FED44DE0080C931 /* MainTabBarController.swift */,
+				881266051FED44DE0080C931 /* MainTabBarController.xib */,
 				8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */,
 				8865CCDA1FEC0C40009633D1 /* Info.plist */,
 			);
@@ -217,9 +220,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				881266071FED44DE0080C931 /* MainTabBarController.xib in Resources */,
 				8865CCD91FEC0C40009633D1 /* LaunchScreen.storyboard in Resources */,
-				8865CCD61FEC0C40009633D1 /* Assets.xcassets in Resources */,
-				8865CCD41FEC0C40009633D1 /* Main.storyboard in Resources */,
+				881266031FED39070080C931 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,9 +293,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CareKit/CareKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CareKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -336,8 +342,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8865CCD11FEC0C40009633D1 /* ViewController.swift in Sources */,
 				8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */,
+				881266021FED39070080C931 /* RootViewController.swift in Sources */,
+				881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,14 +367,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8865CCD21FEC0C40009633D1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8865CCD31FEC0C40009633D1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -494,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7E835U7QXG;
 				INFOPLIST_FILE = BloodPressure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.htdevelopers.BloodPressure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -510,6 +510,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7E835U7QXG;
 				INFOPLIST_FILE = BloodPressure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.htdevelopers.BloodPressure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
