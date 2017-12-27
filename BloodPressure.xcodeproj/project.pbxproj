@@ -15,6 +15,11 @@
 		8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */; };
 		8865CCD91FEC0C40009633D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */; };
 		8865CCE41FEC0C40009633D1 /* BloodPressureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCE31FEC0C40009633D1 /* BloodPressureTests.swift */; };
+		88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */; };
+		88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */; };
+		88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD71FF3BCAB00C30FB5 /* App.swift */; };
+		88A68DDC1FF3CF9B00C30FB5 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */; };
+		88A68DE01FF3E2CB00C30FB5 /* RestingHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */; };
 		D98749830CD8D42146EA2810 /* Pods_BloodPressureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E663559BB5115739C08083 /* Pods_BloodPressureTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +50,11 @@
 		8865CCDF1FEC0C40009633D1 /* BloodPressureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloodPressureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8865CCE31FEC0C40009633D1 /* BloodPressureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureTests.swift; sourceTree = "<group>"; };
 		8865CCE51FEC0C40009633D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarePlanStoreManager.swift; sourceTree = "<group>"; };
+		88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
+		88A68DD71FF3BCAB00C30FB5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
+		88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingHeartRate.swift; sourceTree = "<group>"; };
 		8B4D17917C094C73D15910D0 /* Pods-BloodPressure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +101,10 @@
 		8865CCCD1FEC0C40009633D1 /* BloodPressure */ = {
 			isa = PBXGroup;
 			children = (
+				88A68DD21FF3B5B000C30FB5 /* Library */,
+				88A68DD71FF3BCAB00C30FB5 /* App.swift */,
+				88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */,
+				88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */,
 				8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */,
 				881266001FED39070080C931 /* RootViewController.swift */,
 				881266011FED39070080C931 /* RootViewController.xib */,
@@ -98,6 +112,7 @@
 				881266051FED44DE0080C931 /* MainTabBarController.xib */,
 				8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */,
 				8865CCDA1FEC0C40009633D1 /* Info.plist */,
+				88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */,
 			);
 			path = BloodPressure;
 			sourceTree = "<group>";
@@ -109,6 +124,30 @@
 				8865CCE51FEC0C40009633D1 /* Info.plist */,
 			);
 			path = BloodPressureTests;
+			sourceTree = "<group>";
+		};
+		88A68DD21FF3B5B000C30FB5 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				88A68DD31FF3B62900C30FB5 /* UI */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		88A68DD31FF3B62900C30FB5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				88A68DD41FF3B63200C30FB5 /* Auto Layout */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		88A68DD41FF3B63200C30FB5 /* Auto Layout */ = {
+			isa = PBXGroup;
+			children = (
+				88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */,
+			);
+			path = "Auto Layout";
 			sourceTree = "<group>";
 		};
 		A6145E5AB3FE08D6B5D7BEC2 /* Pods */ = {
@@ -144,6 +183,7 @@
 				8865CCC91FEC0C40009633D1 /* Resources */,
 				4C9229B4DDF973B7EFFB4DE2 /* [CP] Embed Pods Frameworks */,
 				688A2BD382B421A30ACAF0F8 /* [CP] Copy Pods Resources */,
+				88A68DDA1FF3BF6000C30FB5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -324,6 +364,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		88A68DDA1FF3BF6000C30FB5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		AE42A730B899FBD90F75D298 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,6 +402,11 @@
 				8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */,
 				881266021FED39070080C931 /* RootViewController.swift in Sources */,
 				881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */,
+				88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */,
+				88A68DDC1FF3CF9B00C30FB5 /* Screens.swift in Sources */,
+				88A68DE01FF3E2CB00C30FB5 /* RestingHeartRate.swift in Sources */,
+				88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */,
+				88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

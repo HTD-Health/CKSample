@@ -1,0 +1,8 @@
+disabled_rules: # rule identifiers to exclude from running
+opt_in_rules: # some rules are only opt-in
+line_length: 150
+type_body_length: 600
+file_length: 800
+included: # paths to include during linting. `--path` is ignored if present.
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods

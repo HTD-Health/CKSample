@@ -20,6 +20,6 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print(String(describing:view))
+        print(String(describing: view))
     }
 }

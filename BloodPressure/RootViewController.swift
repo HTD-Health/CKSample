@@ -30,9 +30,7 @@ class RootViewController: UIViewController {
 extension RootViewController {
     func embed(viewController childVC: UIViewController) {
         addChildViewController(childVC)
-        self.containerView.addSubview(childVC.view)
-        let childFrame = self.containerView.bounds
-        childVC.view.frame = childFrame
+        self.containerView.addSubviewAndConstraintToEdges(childVC.view)
         childVC.didMove(toParentViewController: self)
     }
 }
