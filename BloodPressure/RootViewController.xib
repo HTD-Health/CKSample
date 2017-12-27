@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="BloodPressure" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="t2X-xZ-uTZ" id="8ct-AV-lih"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +23,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2X-xZ-uTZ">
                     <rect key="frame" x="0.0" y="100" width="375" height="567"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.66666668653488159" green="0.42451739328544053" blue="0.45095928107888156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
