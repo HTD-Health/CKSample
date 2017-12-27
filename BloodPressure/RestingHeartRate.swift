@@ -1,9 +1,11 @@
 import CareKit
+import ResearchKit
 
 struct RestingHeartRate {
 
+    let activityType = "RestingHeartRate"
     var carePlanActivity: OCKCarePlanActivity {
-        let identifier = "RestingHeartRate"
+        let identifier = activityType
         let startDate = DateComponents(year: 2017, month: 12, day: 01)
         let schedule = OCKCareSchedule.weeklySchedule(withStartDate: startDate, occurrencesOnEachDay: [1, 1, 1, 1, 1, 1, 1])
         let thresholds = [
@@ -31,5 +33,24 @@ struct RestingHeartRate {
                                                       thresholds: [thresholds],
                                                       optional: false)
         return activity
+    }
+
+    var task: ORKTask {
+        var quantityTypeId: HKQuantityTypeIdentifier
+        if #available(iOS 11.0, *) {
+            quantityTypeId = .restingHeartRate
+        } else {
+            quantityTypeId = .heartRate
+        }
+        let quantityType = HKQuantityType.quantityType(forIdentifier: quantityTypeId)!
+        let unit = HKUnit(from: "bpm")
+        let answerFormat = ORKHealthKitQuantityTypeAnswerFormat(quantityType: quantityType, unit: unit, style: .integer)
+
+        let title = "Enter your resting heart rate"
+        let questionStep = ORKQuestionStep(identifier: activityType, title: title, answer: answerFormat)
+        questionStep.isOptional = false
+
+        let task = ORKOrderedTask(identifier: activityType, steps: [questionStep])
+        return task
     }
 }

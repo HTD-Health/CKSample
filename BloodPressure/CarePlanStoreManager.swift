@@ -32,13 +32,19 @@ class CarePlanStoreManager: NSObject {
 
     private func addSampleData() {
         let restingHeartRate = RestingHeartRate()
-        let carePlanActivity = restingHeartRate.carePlanActivity
-
-        self.store.add(carePlanActivity) { (success, error) in
+        self.store.add(restingHeartRate.carePlanActivity) { (success, error) in
             if let error = error {
                 print(error.localizedDescription)
             }
         }
+
+        let bloodPressure = BloodPressure()
+        self.store.add(bloodPressure.carePlanActivity) { (success, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+
     }
 }
 

@@ -1,4 +1,5 @@
 import CareKit
+import ResearchKit
 
 final class Screens {
     private let storeManager: CarePlanStoreManager
@@ -14,5 +15,10 @@ final class Screens {
 
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
+    }
+
+    public func task(_ task: ORKTask) -> UIViewController {
+        let taskViewController = ORKTaskViewController(task: task, taskRun: nil)
+        return taskViewController
     }
 }

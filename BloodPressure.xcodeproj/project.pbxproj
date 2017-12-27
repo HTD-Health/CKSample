@@ -20,6 +20,7 @@
 		88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD71FF3BCAB00C30FB5 /* App.swift */; };
 		88A68DDC1FF3CF9B00C30FB5 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */; };
 		88A68DE01FF3E2CB00C30FB5 /* RestingHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */; };
+		88A68DE21FF3F16600C30FB5 /* BloodPressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DE11FF3F16600C30FB5 /* BloodPressure.swift */; };
 		D98749830CD8D42146EA2810 /* Pods_BloodPressureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E663559BB5115739C08083 /* Pods_BloodPressureTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		88A68DD71FF3BCAB00C30FB5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingHeartRate.swift; sourceTree = "<group>"; };
+		88A68DE11FF3F16600C30FB5 /* BloodPressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressure.swift; sourceTree = "<group>"; };
 		8B4D17917C094C73D15910D0 /* Pods-BloodPressure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				881266051FED44DE0080C931 /* MainTabBarController.xib */,
 				8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */,
 				8865CCDA1FEC0C40009633D1 /* Info.plist */,
+				88A68DE11FF3F16600C30FB5 /* BloodPressure.swift */,
 				88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */,
 			);
 			path = BloodPressure;
@@ -335,12 +338,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CareKit/CareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ResearchKit/ResearchKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ResearchKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -404,6 +409,7 @@
 				881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */,
 				88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */,
 				88A68DDC1FF3CF9B00C30FB5 /* Screens.swift in Sources */,
+				88A68DE21FF3F16600C30FB5 /* BloodPressure.swift in Sources */,
 				88A68DE01FF3E2CB00C30FB5 /* RestingHeartRate.swift in Sources */,
 				88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */,
 				88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */,
