@@ -2,6 +2,7 @@ import CareKit
 
 class CarePlanStoreManager: NSObject {
     let store: OCKCarePlanStore
+    let sampleData: SampleData
 
     convenience override init() {
         let fileManager = FileManager.default
@@ -25,26 +26,9 @@ class CarePlanStoreManager: NSObject {
 
     init(storeURL: URL) {
         self.store = OCKCarePlanStore(persistenceDirectoryURL: storeURL)
+        self.sampleData = SampleData(carePlanStore: store)
         super.init()
         self.store.delegate = self
-        self.addSampleData()
-    }
-
-    private func addSampleData() {
-        let restingHeartRate = RestingHeartRate()
-        self.store.add(restingHeartRate.carePlanActivity) { (success, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-
-        let bloodPressure = BloodPressure()
-        self.store.add(bloodPressure.carePlanActivity) { (success, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-
     }
 }
 

@@ -1,11 +1,23 @@
 import CareKit
 import ResearchKit
 
-struct RestingHeartRate {
+struct RestingHeartRate: Assessment {
 
-    let activityType = "RestingHeartRate"
+    let activityType: ActivityType = .restingHeartRate
+    let unit = HKUnit(from: "count/min")
+    let quantityType: HKQuantityType = {
+        var quantityTypeId: HKQuantityTypeIdentifier
+        if #available(iOS 11.0, *) {
+            quantityTypeId = .restingHeartRate
+        } else {
+            quantityTypeId = .heartRate
+        }
+        return HKQuantityType.quantityType(forIdentifier: quantityTypeId)!
+    }()
+
+    var associatedEvent: OCKCarePlanEvent?
+
     var carePlanActivity: OCKCarePlanActivity {
-        let identifier = activityType
         let startDate = DateComponents(year: 2017, month: 12, day: 01)
         let schedule = OCKCareSchedule.weeklySchedule(withStartDate: startDate, occurrencesOnEachDay: [1, 1, 1, 1, 1, 1, 1])
         let thresholds = [
@@ -22,7 +34,7 @@ struct RestingHeartRate {
         let title = "Resting Heart Rate"
         let summary = "After 15 minutes of rest"
 
-        let activity = OCKCarePlanActivity.assessment(withIdentifier: identifier,
+        let activity = OCKCarePlanActivity.assessment(withIdentifier: activityType.rawValue,
                                                       groupIdentifier: "Assessment",
                                                       title: title,
                                                       text: summary,
@@ -36,21 +48,46 @@ struct RestingHeartRate {
     }
 
     var task: ORKTask {
-        var quantityTypeId: HKQuantityTypeIdentifier
-        if #available(iOS 11.0, *) {
-            quantityTypeId = .restingHeartRate
-        } else {
-            quantityTypeId = .heartRate
-        }
-        let quantityType = HKQuantityType.quantityType(forIdentifier: quantityTypeId)!
-        let unit = HKUnit(from: "bpm")
         let answerFormat = ORKHealthKitQuantityTypeAnswerFormat(quantityType: quantityType, unit: unit, style: .integer)
 
         let title = "Enter your resting heart rate"
-        let questionStep = ORKQuestionStep(identifier: activityType, title: title, answer: answerFormat)
+        let questionStep = ORKQuestionStep(identifier: activityType.rawValue, title: title, answer: answerFormat)
         questionStep.isOptional = false
 
-        let task = ORKOrderedTask(identifier: activityType, steps: [questionStep])
+        let task = ORKOrderedTask(identifier: activityType.rawValue, steps: [questionStep])
         return task
     }
+}
+
+extension RestingHeartRate: HealthSampleBuilder {
+    func buildSampleWithTaskResult(_ result: ORKTaskResult) -> HKQuantitySample {
+        guard let firstResult = result.firstResult as? ORKStepResult,
+            let stepResult = firstResult.results?.first
+            else { fatalError("Unexpected task results") }
+
+        guard let hrResult = stepResult as? ORKNumericQuestionResult,
+            let pressureAnswer = hrResult.numericAnswer
+            else { fatalError("Unable to determine result answer") }
+
+        let quantity = HKQuantity(unit: unit, doubleValue: pressureAnswer.doubleValue)
+        let now = Date()
+
+        return HKQuantitySample(type: quantityType, quantity: quantity, start: now, end: now)
+    }
+
+    func buildSampleWithTaskResult(_ result: ORKTaskResult) -> HKQuantitySample {
+        guard let firstResult = result.firstResult as? ORKStepResult,
+            let stepResult = firstResult.results?.first
+            else { fatalError("Unexpected task results") }
+
+        guard let hrResult = stepResult as? ORKNumericQuestionResult,
+            let pressureAnswer = hrResult.numericAnswer
+            else { fatalError("Unable to determine result answer") }
+
+        let quantity = HKQuantity(unit: unit, doubleValue: pressureAnswer.doubleValue)
+        let now = Date()
+
+        return HKQuantitySample(type: quantityType, quantity: quantity, start: now, end: now)
+    }
+
 }

@@ -8,10 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0469F21E396F53D1CC736E52 /* Pods_BloodPressure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FE9EB24A9DF053011A04F0 /* Pods_BloodPressure.framework */; };
+		880065101FFB93CA0074E6EC /* AssessmentTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800650F1FFB93CA0074E6EC /* AssessmentTaskCoordinator.swift */; };
+		880065121FFB96C70074E6EC /* AssessmentTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880065111FFB96C70074E6EC /* AssessmentTaskViewModel.swift */; };
+		880065151FFBA8810074E6EC /* AssessmentTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880065141FFBA8810074E6EC /* AssessmentTaskViewController.swift */; };
+		880065191FFBCB460074E6EC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880065181FFBCB460074E6EC /* HealthKit.framework */; };
 		881266021FED39070080C931 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881266001FED39070080C931 /* RootViewController.swift */; };
 		881266031FED39070080C931 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881266011FED39070080C931 /* RootViewController.xib */; };
 		881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881266041FED44DE0080C931 /* MainTabBarController.swift */; };
 		881266071FED44DE0080C931 /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881266051FED44DE0080C931 /* MainTabBarController.xib */; };
+		8845D2151FF82A4300F44192 /* SymptomTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D2141FF82A4300F44192 /* SymptomTrackerViewController.swift */; };
+		8845D2171FF83CB200F44192 /* SymptomTrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D2161FF83CB200F44192 /* SymptomTrackerViewModel.swift */; };
+		8845D21B1FF90EFF00F44192 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D21A1FF90EFF00F44192 /* DependencyContainer.swift */; };
+		8845D21D1FFAAAFE00F44192 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D21C1FFAAAFE00F44192 /* Activity.swift */; };
+		8845D2201FFAB74B00F44192 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D21F1FFAB74B00F44192 /* SampleData.swift */; };
 		8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */; };
 		8865CCD91FEC0C40009633D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */; };
 		8865CCE41FEC0C40009633D1 /* BloodPressureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCE31FEC0C40009633D1 /* BloodPressureTests.swift */; };
@@ -21,6 +30,7 @@
 		88A68DDC1FF3CF9B00C30FB5 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */; };
 		88A68DE01FF3E2CB00C30FB5 /* RestingHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */; };
 		88A68DE21FF3F16600C30FB5 /* BloodPressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DE11FF3F16600C30FB5 /* BloodPressure.swift */; };
+		88A68DE41FF4065300C30FB5 /* SymptomTrackerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DE31FF4065300C30FB5 /* SymptomTrackerCoordinator.swift */; };
 		D98749830CD8D42146EA2810 /* Pods_BloodPressureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E663559BB5115739C08083 /* Pods_BloodPressureTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,10 +50,20 @@
 		306F39FCA5D07315479CA0B4 /* Pods-BloodPressureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		49D6C28BDD4D269D5AB386CA /* Pods-BloodPressureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressureTests/Pods-BloodPressureTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C1B4E645D100CE81F45F399 /* Pods-BloodPressure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressure.release.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure.release.xcconfig"; sourceTree = "<group>"; };
+		8800650F1FFB93CA0074E6EC /* AssessmentTaskCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentTaskCoordinator.swift; sourceTree = "<group>"; };
+		880065111FFB96C70074E6EC /* AssessmentTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentTaskViewModel.swift; sourceTree = "<group>"; };
+		880065141FFBA8810074E6EC /* AssessmentTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentTaskViewController.swift; sourceTree = "<group>"; };
+		880065171FFBCB460074E6EC /* BloodPressure.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BloodPressure.entitlements; sourceTree = "<group>"; };
+		880065181FFBCB460074E6EC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		881266001FED39070080C931 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		881266011FED39070080C931 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		881266041FED44DE0080C931 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		881266051FED44DE0080C931 /* MainTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarController.xib; sourceTree = "<group>"; };
+		8845D2141FF82A4300F44192 /* SymptomTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTrackerViewController.swift; sourceTree = "<group>"; };
+		8845D2161FF83CB200F44192 /* SymptomTrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTrackerViewModel.swift; sourceTree = "<group>"; };
+		8845D21A1FF90EFF00F44192 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		8845D21C1FFAAAFE00F44192 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		8845D21F1FFAB74B00F44192 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		8865CCCB1FEC0C40009633D1 /* BloodPressure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloodPressure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8865CCD81FEC0C40009633D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +77,7 @@
 		88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingHeartRate.swift; sourceTree = "<group>"; };
 		88A68DE11FF3F16600C30FB5 /* BloodPressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressure.swift; sourceTree = "<group>"; };
+		88A68DE31FF4065300C30FB5 /* SymptomTrackerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTrackerCoordinator.swift; sourceTree = "<group>"; };
 		8B4D17917C094C73D15910D0 /* Pods-BloodPressure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloodPressure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0469F21E396F53D1CC736E52 /* Pods_BloodPressure.framework in Frameworks */,
+				880065191FFBCB460074E6EC /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +102,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8800650E1FFB89F80074E6EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */,
+				8845D21F1FFAB74B00F44192 /* SampleData.swift */,
+				8845D21E1FFAABFA00F44192 /* Activites */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		880065131FFB96CC0074E6EC /* Assessment Task */ = {
+			isa = PBXGroup;
+			children = (
+				8800650F1FFB93CA0074E6EC /* AssessmentTaskCoordinator.swift */,
+				880065111FFB96C70074E6EC /* AssessmentTaskViewModel.swift */,
+				880065141FFBA8810074E6EC /* AssessmentTaskViewController.swift */,
+			);
+			path = "Assessment Task";
+			sourceTree = "<group>";
+		};
+		8845D2191FF83F1D00F44192 /* Symptom Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				88A68DE31FF4065300C30FB5 /* SymptomTrackerCoordinator.swift */,
+				8845D2161FF83CB200F44192 /* SymptomTrackerViewModel.swift */,
+				8845D2141FF82A4300F44192 /* SymptomTrackerViewController.swift */,
+			);
+			path = "Symptom Tracker";
+			sourceTree = "<group>";
+		};
+		8845D21E1FFAABFA00F44192 /* Activites */ = {
+			isa = PBXGroup;
+			children = (
+				8845D21C1FFAAAFE00F44192 /* Activity.swift */,
+				88A68DE11FF3F16600C30FB5 /* BloodPressure.swift */,
+				88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */,
+			);
+			path = Activites;
+			sourceTree = "<group>";
+		};
+		8845D2211FFB857000F44192 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8845D2191FF83F1D00F44192 /* Symptom Tracker */,
+				880065131FFB96CC0074E6EC /* Assessment Task */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		8865CCC21FEC0C40009633D1 = {
 			isa = PBXGroup;
 			children = (
@@ -103,9 +174,10 @@
 		8865CCCD1FEC0C40009633D1 /* BloodPressure */ = {
 			isa = PBXGroup;
 			children = (
+				880065171FFBCB460074E6EC /* BloodPressure.entitlements */,
 				88A68DD21FF3B5B000C30FB5 /* Library */,
 				88A68DD71FF3BCAB00C30FB5 /* App.swift */,
-				88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */,
+				8845D21A1FF90EFF00F44192 /* DependencyContainer.swift */,
 				88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */,
 				8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */,
 				881266001FED39070080C931 /* RootViewController.swift */,
@@ -114,8 +186,8 @@
 				881266051FED44DE0080C931 /* MainTabBarController.xib */,
 				8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */,
 				8865CCDA1FEC0C40009633D1 /* Info.plist */,
-				88A68DE11FF3F16600C30FB5 /* BloodPressure.swift */,
-				88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */,
+				8845D2211FFB857000F44192 /* Modules */,
+				8800650E1FFB89F80074E6EC /* Model */,
 			);
 			path = BloodPressure;
 			sourceTree = "<group>";
@@ -167,6 +239,7 @@
 		FB5D9D51213A601B1D1C7D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				880065181FFBCB460074E6EC /* HealthKit.framework */,
 				01FE9EB24A9DF053011A04F0 /* Pods_BloodPressure.framework */,
 				13E663559BB5115739C08083 /* Pods_BloodPressureTests.framework */,
 			);
@@ -231,6 +304,11 @@
 					8865CCCA1FEC0C40009633D1 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					8865CCDE1FEC0C40009633D1 = {
 						CreatedOnToolsVersion = 9.2;
@@ -405,14 +483,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */,
+				8845D2171FF83CB200F44192 /* SymptomTrackerViewModel.swift in Sources */,
+				8845D21D1FFAAAFE00F44192 /* Activity.swift in Sources */,
 				881266021FED39070080C931 /* RootViewController.swift in Sources */,
 				881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */,
 				88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */,
 				88A68DDC1FF3CF9B00C30FB5 /* Screens.swift in Sources */,
+				880065101FFB93CA0074E6EC /* AssessmentTaskCoordinator.swift in Sources */,
+				8845D21B1FF90EFF00F44192 /* DependencyContainer.swift in Sources */,
+				8845D2151FF82A4300F44192 /* SymptomTrackerViewController.swift in Sources */,
+				88A68DE41FF4065300C30FB5 /* SymptomTrackerCoordinator.swift in Sources */,
 				88A68DE21FF3F16600C30FB5 /* BloodPressure.swift in Sources */,
 				88A68DE01FF3E2CB00C30FB5 /* RestingHeartRate.swift in Sources */,
+				880065151FFBA8810074E6EC /* AssessmentTaskViewController.swift in Sources */,
 				88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */,
+				8845D2201FFAB74B00F44192 /* SampleData.swift in Sources */,
 				88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */,
+				880065121FFB96C70074E6EC /* AssessmentTaskViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +645,7 @@
 			baseConfigurationReference = 8B4D17917C094C73D15910D0 /* Pods-BloodPressure.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BloodPressure/BloodPressure.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7E835U7QXG;
 				INFOPLIST_FILE = BloodPressure/Info.plist;
@@ -575,6 +663,7 @@
 			baseConfigurationReference = 6C1B4E645D100CE81F45F399 /* Pods-BloodPressure.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BloodPressure/BloodPressure.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7E835U7QXG;
 				INFOPLIST_FILE = BloodPressure/Info.plist;
