@@ -66,28 +66,16 @@ extension RestingHeartRate: HealthSampleBuilder {
             else { fatalError("Unexpected task results") }
 
         guard let hrResult = stepResult as? ORKNumericQuestionResult,
-            let pressureAnswer = hrResult.numericAnswer
+            let hrAnswer = hrResult.numericAnswer
             else { fatalError("Unable to determine result answer") }
 
-        let quantity = HKQuantity(unit: unit, doubleValue: pressureAnswer.doubleValue)
-        let now = Date()
+        let quantity = HKQuantity(unit: unit, doubleValue: hrAnswer.doubleValue)
 
-        return HKQuantitySample(type: quantityType, quantity: quantity, start: now, end: now)
+        let calendar = Calendar.current
+        guard let dateComponents = associatedEvent?.date, let date = calendar.date(from: dateComponents) else {
+            print("HK sample: \(result.startDate) -> \(result.endDate)")
+            return HKQuantitySample(type: quantityType, quantity: quantity, start: result.startDate, end: result.endDate)
+        }
+        return HKQuantitySample(type: quantityType, quantity: quantity, start: date, end: date)
     }
-
-    func buildSampleWithTaskResult(_ result: ORKTaskResult) -> HKQuantitySample {
-        guard let firstResult = result.firstResult as? ORKStepResult,
-            let stepResult = firstResult.results?.first
-            else { fatalError("Unexpected task results") }
-
-        guard let hrResult = stepResult as? ORKNumericQuestionResult,
-            let pressureAnswer = hrResult.numericAnswer
-            else { fatalError("Unable to determine result answer") }
-
-        let quantity = HKQuantity(unit: unit, doubleValue: pressureAnswer.doubleValue)
-        let now = Date()
-
-        return HKQuantitySample(type: quantityType, quantity: quantity, start: now, end: now)
-    }
-
 }
