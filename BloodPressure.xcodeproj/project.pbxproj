@@ -12,6 +12,7 @@
 		880065121FFB96C70074E6EC /* AssessmentTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880065111FFB96C70074E6EC /* AssessmentTaskViewModel.swift */; };
 		880065151FFBA8810074E6EC /* AssessmentTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880065141FFBA8810074E6EC /* AssessmentTaskViewController.swift */; };
 		880065191FFBCB460074E6EC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880065181FFBCB460074E6EC /* HealthKit.framework */; };
+		8800651B1FFD24AD0074E6EC /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800651A1FFD24AD0074E6EC /* BluetoothManager.swift */; };
 		881266021FED39070080C931 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881266001FED39070080C931 /* RootViewController.swift */; };
 		881266031FED39070080C931 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881266011FED39070080C931 /* RootViewController.xib */; };
 		881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881266041FED44DE0080C931 /* MainTabBarController.swift */; };
@@ -55,6 +56,7 @@
 		880065141FFBA8810074E6EC /* AssessmentTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentTaskViewController.swift; sourceTree = "<group>"; };
 		880065171FFBCB460074E6EC /* BloodPressure.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BloodPressure.entitlements; sourceTree = "<group>"; };
 		880065181FFBCB460074E6EC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		8800651A1FFD24AD0074E6EC /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		881266001FED39070080C931 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		881266011FED39070080C931 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		881266041FED44DE0080C931 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 				880065141FFBA8810074E6EC /* AssessmentTaskViewController.swift */,
 			);
 			path = "Assessment Task";
+			sourceTree = "<group>";
+		};
+		8800651C1FFD24B40074E6EC /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				8800651A1FFD24AD0074E6EC /* BluetoothManager.swift */,
+			);
+			path = Bluetooth;
 			sourceTree = "<group>";
 		};
 		8845D2191FF83F1D00F44192 /* Symptom Tracker */ = {
@@ -188,6 +198,7 @@
 				8865CCDA1FEC0C40009633D1 /* Info.plist */,
 				8845D2211FFB857000F44192 /* Modules */,
 				8800650E1FFB89F80074E6EC /* Model */,
+				8800651C1FFD24B40074E6EC /* Bluetooth */,
 			);
 			path = BloodPressure;
 			sourceTree = "<group>";
@@ -438,9 +449,96 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure-resources.sh",
+				"${PODS_ROOT}/CareKit/CareKit/Assets.xcassets",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/ar.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/ca.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/cs.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/da.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/de.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/el.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/en.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/en_AU.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/en_GB.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/es.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/es_419.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/es_MX.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/fi.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/fr.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/fr_CA.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/he.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/hi.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/hr.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/hu.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/id.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/it.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/ja.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/ko.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/ms.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/nb.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/nl.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/no.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/pl.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/pt.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/pt_PT.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/ro.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/ru.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/sk.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/sv.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/th.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/tr.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/uk.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/vi.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/zh_CN.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/zh_HK.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/Localization/zh_TW.lproj",
+				"${PODS_ROOT}/CareKit/CareKit/CarePlan/OCKCarePlanStore.xcdatamodeld",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Artwork.xcassets",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/ar.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/ca.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/cs.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/da.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/de.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/el.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/en.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/en_AU.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/en_GB.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/es.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/es_419.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/es_MX.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/fi.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/fr.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/fr_CA.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/he.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/hi.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/hr.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/hu.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/id.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/it.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/ja.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/ko.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/ms.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/nb.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/nl.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/no.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/pl.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/pt.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/pt_PT.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/ro.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/ru.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/sk.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/sv.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/th.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/tr.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/uk.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/vi.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/zh_CN.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/zh_HK.lproj",
+				"${PODS_ROOT}/ResearchKit/ResearchKit/Localized/zh_TW.lproj",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -485,6 +583,7 @@
 				8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */,
 				8845D2171FF83CB200F44192 /* SymptomTrackerViewModel.swift in Sources */,
 				8845D21D1FFAAAFE00F44192 /* Activity.swift in Sources */,
+				8800651B1FFD24AD0074E6EC /* BluetoothManager.swift in Sources */,
 				881266021FED39070080C931 /* RootViewController.swift in Sources */,
 				881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */,
 				88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */,
