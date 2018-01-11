@@ -27,6 +27,12 @@
 		8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */; };
 		8865CCD91FEC0C40009633D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */; };
 		8865CCE41FEC0C40009633D1 /* BloodPressureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCE31FEC0C40009633D1 /* BloodPressureTests.swift */; };
+		8889BDAD2007831A00C2A2E5 /* BTSelectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDAC2007831A00C2A2E5 /* BTSelectionCoordinator.swift */; };
+		8889BDB12007840F00C2A2E5 /* BTSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDB02007840F00C2A2E5 /* BTSelectionViewModel.swift */; };
+		8889BDB4200784E100C2A2E5 /* BTSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDB2200784E100C2A2E5 /* BTSelectionViewController.swift */; };
+		8889BDB5200784E100C2A2E5 /* BTSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8889BDB3200784E100C2A2E5 /* BTSelectionViewController.xib */; };
+		8889BDB82007C66000C2A2E5 /* PeripheralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDB62007C66000C2A2E5 /* PeripheralTableViewCell.swift */; };
+		8889BDB92007C66000C2A2E5 /* PeripheralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8889BDB72007C66000C2A2E5 /* PeripheralTableViewCell.xib */; };
 		88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */; };
 		88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */; };
 		88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD71FF3BCAB00C30FB5 /* App.swift */; };
@@ -77,6 +83,12 @@
 		8865CCDF1FEC0C40009633D1 /* BloodPressureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloodPressureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8865CCE31FEC0C40009633D1 /* BloodPressureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureTests.swift; sourceTree = "<group>"; };
 		8865CCE51FEC0C40009633D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8889BDAC2007831A00C2A2E5 /* BTSelectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTSelectionCoordinator.swift; sourceTree = "<group>"; };
+		8889BDB02007840F00C2A2E5 /* BTSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTSelectionViewModel.swift; sourceTree = "<group>"; };
+		8889BDB2200784E100C2A2E5 /* BTSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTSelectionViewController.swift; sourceTree = "<group>"; };
+		8889BDB3200784E100C2A2E5 /* BTSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BTSelectionViewController.xib; sourceTree = "<group>"; };
+		8889BDB62007C66000C2A2E5 /* PeripheralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTableViewCell.swift; sourceTree = "<group>"; };
+		8889BDB72007C66000C2A2E5 /* PeripheralTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeripheralTableViewCell.xib; sourceTree = "<group>"; };
 		88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarePlanStoreManager.swift; sourceTree = "<group>"; };
 		88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		88A68DD71FF3BCAB00C30FB5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -160,7 +172,7 @@
 		8845D2211FFB857000F44192 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				8889BDAB2007778A00C2A2E5 /* Input Selection */,
+				8889BDAB2007778A00C2A2E5 /* BT Selection */,
 				8845D2191FF83F1D00F44192 /* Symptom Tracker */,
 				880065131FFB96CC0074E6EC /* Assessment Task */,
 			);
@@ -219,11 +231,17 @@
 			path = BloodPressureTests;
 			sourceTree = "<group>";
 		};
-		8889BDAB2007778A00C2A2E5 /* Input Selection */ = {
+		8889BDAB2007778A00C2A2E5 /* BT Selection */ = {
 			isa = PBXGroup;
 			children = (
+				8889BDB62007C66000C2A2E5 /* PeripheralTableViewCell.swift */,
+				8889BDB72007C66000C2A2E5 /* PeripheralTableViewCell.xib */,
+				8889BDAC2007831A00C2A2E5 /* BTSelectionCoordinator.swift */,
+				8889BDB02007840F00C2A2E5 /* BTSelectionViewModel.swift */,
+				8889BDB2200784E100C2A2E5 /* BTSelectionViewController.swift */,
+				8889BDB3200784E100C2A2E5 /* BTSelectionViewController.xib */,
 			);
-			path = "Input Selection";
+			path = "BT Selection";
 			sourceTree = "<group>";
 		};
 		88A68DD21FF3B5B000C30FB5 /* Library */ = {
@@ -367,6 +385,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				881266071FED44DE0080C931 /* MainTabBarController.xib in Resources */,
+				8889BDB92007C66000C2A2E5 /* PeripheralTableViewCell.xib in Resources */,
+				8889BDB5200784E100C2A2E5 /* BTSelectionViewController.xib in Resources */,
 				8865CCD91FEC0C40009633D1 /* LaunchScreen.storyboard in Resources */,
 				881266031FED39070080C931 /* RootViewController.xib in Resources */,
 			);
@@ -602,18 +622,22 @@
 				881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */,
 				88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */,
 				88A68DDC1FF3CF9B00C30FB5 /* Screens.swift in Sources */,
+				8889BDB12007840F00C2A2E5 /* BTSelectionViewModel.swift in Sources */,
 				880065101FFB93CA0074E6EC /* AssessmentTaskCoordinator.swift in Sources */,
 				8845D21B1FF90EFF00F44192 /* DependencyContainer.swift in Sources */,
 				8845D2151FF82A4300F44192 /* SymptomTrackerViewController.swift in Sources */,
 				8802E6B620038BD6004F885E /* HeartRateMeasurement.swift in Sources */,
 				88A68DE41FF4065300C30FB5 /* SymptomTrackerCoordinator.swift in Sources */,
+				8889BDB4200784E100C2A2E5 /* BTSelectionViewController.swift in Sources */,
 				88A68DE21FF3F16600C30FB5 /* BloodPressure.swift in Sources */,
+				8889BDAD2007831A00C2A2E5 /* BTSelectionCoordinator.swift in Sources */,
 				88A68DE01FF3E2CB00C30FB5 /* RestingHeartRate.swift in Sources */,
 				880065151FFBA8810074E6EC /* AssessmentTaskViewController.swift in Sources */,
 				88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */,
 				8845D2201FFAB74B00F44192 /* SampleData.swift in Sources */,
 				88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */,
 				880065121FFB96C70074E6EC /* AssessmentTaskViewModel.swift in Sources */,
+				8889BDB82007C66000C2A2E5 /* PeripheralTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,10 +26,17 @@ class BluetoothManager: NSObject {
     private let centralManager: CBCentralManager
     private var discoveredPeripherals = [CBPeripheral]()
 
+    var devicesUpdatedHandler: (([PeripheralViewModel]) -> Void)?
+
     override init() {
         centralManager = CBCentralManager(delegate: nil, queue: nil)
         super.init()
         centralManager.delegate = self
+    }
+
+    func connect(to peripheral: CBPeripheral) {
+        peripheral.delegate = self
+        centralManager.connect(peripheral, options: nil)
     }
 }
 
@@ -118,10 +125,16 @@ extension BluetoothManager {
             sortPeripherals()
             printPeripherals()
 
-            if let name = peripheral.name, name.starts(with: "Polar") {
-                peripheral.delegate = self
-                centralManager.connect(peripheral, options: nil)
+            let devices = discoveredPeripherals.map {
+                return PeripheralViewModel(peripheral: $0)
             }
+
+            devicesUpdatedHandler?(devices)
+
+//            if let name = peripheral.name, name.starts(with: "Polar") {
+//                peripheral.delegate = self
+//                centralManager.connect(peripheral, options: nil)
+//            }
         }
     }
 

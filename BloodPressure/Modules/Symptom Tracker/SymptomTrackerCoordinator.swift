@@ -12,6 +12,10 @@ class SymptomTrackerCoordinator {
         return AssessmentTaskCoordinator(factory: factory)
     }()
 
+    private lazy var btSelectionCoordinator: BTSelectionCoordinator = {
+        return BTSelectionCoordinator()
+    }()
+
     init(factory: Factory) {
         self.factory = factory
     }
@@ -36,23 +40,20 @@ class SymptomTrackerCoordinator {
         default:
             assessmentTaskCoordinator.presentAssessmentTask(for: assessment, in: navigationController)
         }
-        if assessment.activityType == .restingHeartRate {
-        }
-
-        assessmentTaskCoordinator.presentAssessmentTask(for: assessment, in: navigationController)
     }
 
     private func didSelectHRAssessment(_ assessment: Assessment) {
         let alertController = UIAlertController(title: "Choose input",
                                                 message: "How would you like to enter your heart rate?",
                                                 preferredStyle: .actionSheet)
-        
+
         let manualAction = UIAlertAction(title: "Manual input", style: .default, handler: { _ in
             self.assessmentTaskCoordinator.presentAssessmentTask(for: assessment, in: self.navigationController)
         })
 
         let hrSensorAction = UIAlertAction(title: "Heart rate sensor", style: .default, handler: { _ in
-            print("sensor")
+            print("Presenting on: \(self.navigationController)")
+            self.btSelectionCoordinator.presentBTSelection(in: self.navigationController)
         })
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
