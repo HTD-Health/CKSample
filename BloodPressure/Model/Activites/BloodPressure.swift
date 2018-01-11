@@ -64,4 +64,3 @@ extension BloodPressure: HealthSampleBuilder {
         return HKQuantitySample(type: quantityType, quantity: quantity, start: now, end: now)
     }
 }
-

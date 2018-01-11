@@ -1,11 +1,3 @@
-//
-//  BloodPressureTests.swift
-//  BloodPressureTests
-//
-//  Created by Aleksander Maj on 21/12/2017.
-//  Copyright © 2017 Aleksander Maj. All rights reserved.
-//
-
 import XCTest
 @testable import BloodPressure
 

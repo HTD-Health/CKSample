@@ -20,7 +20,8 @@ class SymptomTrackerViewModel: NSObject, OCKSymptomTrackerViewControllerDelegate
             else { return }
 
         assessment.associatedEvent = assessmentEvent
-        
+
+
         coordinator.didSelectAssessment(assessment)
     }
 }
