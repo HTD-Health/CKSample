@@ -1,4 +1,5 @@
 import UIKit
+import CoreBluetooth
 
 class BTSelectionCoordinator {
     private let navigationController = UINavigationController()
@@ -17,4 +18,8 @@ class BTSelectionCoordinator {
         navigationController.dismiss(animated: animated, completion: nil)
     }
 
+    func presentMeasurementVC(for peripheral: CBPeripheral) {
+        let measVC = HRMeasurementViewController(bluetoothManager: bluetoothManager, peripheral: peripheral)
+        navigationController.pushViewController(measVC, animated: true)
+    }
 }

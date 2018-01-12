@@ -71,5 +71,9 @@ class BTSelectionViewModel {
             self.peripherals = peripherals
             self.viewController?.tableView.reloadData()
         }
+
+        self.bluetoothManager.didConnectHandler = { peripheral in
+            self.coordinator?.presentMeasurementVC(for: peripheral)
+        }
     }
 }

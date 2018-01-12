@@ -33,6 +33,8 @@
 		8889BDB5200784E100C2A2E5 /* BTSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8889BDB3200784E100C2A2E5 /* BTSelectionViewController.xib */; };
 		8889BDB82007C66000C2A2E5 /* PeripheralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDB62007C66000C2A2E5 /* PeripheralTableViewCell.swift */; };
 		8889BDB92007C66000C2A2E5 /* PeripheralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8889BDB72007C66000C2A2E5 /* PeripheralTableViewCell.xib */; };
+		8889BDBC2008C7C800C2A2E5 /* HRMeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDBA2008C7C800C2A2E5 /* HRMeasurementViewController.swift */; };
+		8889BDBD2008C7C800C2A2E5 /* HRMeasurementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8889BDBB2008C7C800C2A2E5 /* HRMeasurementViewController.xib */; };
 		88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */; };
 		88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */; };
 		88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD71FF3BCAB00C30FB5 /* App.swift */; };
@@ -89,6 +91,8 @@
 		8889BDB3200784E100C2A2E5 /* BTSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BTSelectionViewController.xib; sourceTree = "<group>"; };
 		8889BDB62007C66000C2A2E5 /* PeripheralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTableViewCell.swift; sourceTree = "<group>"; };
 		8889BDB72007C66000C2A2E5 /* PeripheralTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeripheralTableViewCell.xib; sourceTree = "<group>"; };
+		8889BDBA2008C7C800C2A2E5 /* HRMeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMeasurementViewController.swift; sourceTree = "<group>"; };
+		8889BDBB2008C7C800C2A2E5 /* HRMeasurementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HRMeasurementViewController.xib; sourceTree = "<group>"; };
 		88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarePlanStoreManager.swift; sourceTree = "<group>"; };
 		88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		88A68DD71FF3BCAB00C30FB5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				8889BDAB2007778A00C2A2E5 /* BT Selection */,
 				8845D2191FF83F1D00F44192 /* Symptom Tracker */,
 				880065131FFB96CC0074E6EC /* Assessment Task */,
+				8889BDBA2008C7C800C2A2E5 /* HRMeasurementViewController.swift */,
+				8889BDBB2008C7C800C2A2E5 /* HRMeasurementViewController.xib */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 				881266071FED44DE0080C931 /* MainTabBarController.xib in Resources */,
 				8889BDB92007C66000C2A2E5 /* PeripheralTableViewCell.xib in Resources */,
 				8889BDB5200784E100C2A2E5 /* BTSelectionViewController.xib in Resources */,
+				8889BDBD2008C7C800C2A2E5 /* HRMeasurementViewController.xib in Resources */,
 				8865CCD91FEC0C40009633D1 /* LaunchScreen.storyboard in Resources */,
 				881266031FED39070080C931 /* RootViewController.xib in Resources */,
 			);
@@ -615,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */,
+				8889BDBC2008C7C800C2A2E5 /* HRMeasurementViewController.swift in Sources */,
 				8845D2171FF83CB200F44192 /* SymptomTrackerViewModel.swift in Sources */,
 				8845D21D1FFAAAFE00F44192 /* Activity.swift in Sources */,
 				8800651B1FFD24AD0074E6EC /* BluetoothManager.swift in Sources */,

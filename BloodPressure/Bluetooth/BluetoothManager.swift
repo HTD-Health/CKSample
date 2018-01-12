@@ -27,6 +27,9 @@ class BluetoothManager: NSObject {
     private var discoveredPeripherals = [CBPeripheral]()
 
     var devicesUpdatedHandler: (([PeripheralViewModel]) -> Void)?
+    var didConnectHandler: ((CBPeripheral) -> Void)?
+
+    var didReceiveHRValue: ((HeartRateMeasurement) -> Void)?
 
     override init() {
         centralManager = CBCentralManager(delegate: nil, queue: nil)
@@ -37,6 +40,10 @@ class BluetoothManager: NSObject {
     func connect(to peripheral: CBPeripheral) {
         peripheral.delegate = self
         centralManager.connect(peripheral, options: nil)
+    }
+
+    func startMeasurement(for peripheral: CBPeripheral) {
+        peripheral.discoverServices(nil)
     }
 }
 
@@ -64,7 +71,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
 
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print(#function)
-        peripheral.discoverServices(nil)
+        didConnectHandler?(peripheral)
     }
 }
 
@@ -87,8 +94,8 @@ extension BluetoothManager: CBPeripheralDelegate {
                 switch $0.uuid {
                 case Characteristic.heartRate.uuid:
                     peripheral.setNotifyValue(true, for: $0)
-                case Characteristic.heardRateDescriptor.uuid:
-                    peripheral.readValue(for: $0)
+//                case Characteristic.heardRateDescriptor.uuid:
+//                    peripheral.readValue(for: $0)
                 default:
                     break
                 }
@@ -96,7 +103,7 @@ extension BluetoothManager: CBPeripheralDelegate {
         }
     }
 
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverInclussdedServicesFor service: CBService, error: Error?) {
         print(#function)
         print(String(describing: service.includedServices))
     }
@@ -108,6 +115,7 @@ extension BluetoothManager: CBPeripheralDelegate {
             //print("MEAS")
             guard let data = characteristic.value else { break }
             let hrMeasurement = HeartRateMeasurement(data: data)
+            self.didReceiveHRValue?(hrMeasurement)
         case Characteristic.heardRateDescriptor.uuid:
             print("DESC")
         default:
