@@ -34,9 +34,11 @@ struct PeripheralViewModel {
     }
 }
 
-class BTSelectionViewModel {
+class BTSelectionViewModel: ViewModelType {
+    typealias Coordinator = BTSelectionCoordinator
+    var coordinator: Coordinator
+
     let bluetoothManager: BluetoothManager
-    weak var coordinator: BTSelectionCoordinator?
 
     let title = "Available HR sensors"
     let leftBarButtonItemTitle: String? = "Close"
@@ -51,7 +53,7 @@ class BTSelectionViewModel {
                 return self.peripherals[indexPath.row]
             }
             viewController?.leftBarButtonItemHandler = {
-                self.coordinator?.dismiss()
+                self.coordinator.dismiss()
             }
             viewController?.didSelectRowAtIndexPath = { indexPath in
                 guard let peripheral = self.peripherals[indexPath.row].peripheral else { return }
@@ -73,7 +75,7 @@ class BTSelectionViewModel {
         }
 
         self.bluetoothManager.didConnectHandler = { peripheral in
-            self.coordinator?.presentMeasurementVC(for: peripheral)
+            self.coordinator.presentMeasurementVC(for: peripheral)
         }
     }
 }

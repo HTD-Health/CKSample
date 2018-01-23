@@ -53,7 +53,7 @@ class SymptomTrackerCoordinator {
 
         let hrSensorAction = UIAlertAction(title: "Heart rate sensor", style: .default, handler: { _ in
             print("Presenting on: \(self.navigationController)")
-            self.btSelectionCoordinator.presentBTSelection(in: self.navigationController)
+            self.btSelectionCoordinator.start(in: self.navigationController)
         })
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in

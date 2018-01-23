@@ -31,6 +31,8 @@ class BluetoothManager: NSObject {
 
     var didReceiveHRValue: ((HeartRateMeasurement) -> Void)?
 
+    private(set) var connectedPeripheral: CBPeripheral?
+
     override init() {
         centralManager = CBCentralManager(delegate: nil, queue: nil)
         super.init()
@@ -42,8 +44,8 @@ class BluetoothManager: NSObject {
         centralManager.connect(peripheral, options: nil)
     }
 
-    func startMeasurement(for peripheral: CBPeripheral) {
-        peripheral.discoverServices(nil)
+    func startMeasurement() {
+        connectedPeripheral?.discoverServices(nil)
     }
 }
 
@@ -70,7 +72,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
     }
 
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        print(#function)
+        connectedPeripheral = peripheral
         didConnectHandler?(peripheral)
     }
 }
@@ -82,7 +84,6 @@ extension BluetoothManager: CBPeripheralDelegate {
             print(String(describing: $0))
             if $0.uuid == Service.heartRate.uuid {
                 peripheral.discoverCharacteristics(nil, for: $0)
-                peripheral.discoverIncludedServices(nil, for: $0)
             }
         }
     }
@@ -103,16 +104,14 @@ extension BluetoothManager: CBPeripheralDelegate {
         }
     }
 
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverInclussdedServicesFor service: CBService, error: Error?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
         print(#function)
         print(String(describing: service.includedServices))
     }
 
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        //print(#function)
         switch characteristic.uuid {
         case Characteristic.heartRate.uuid:
-            //print("MEAS")
             guard let data = characteristic.value else { break }
             let hrMeasurement = HeartRateMeasurement(data: data)
             self.didReceiveHRValue?(hrMeasurement)
