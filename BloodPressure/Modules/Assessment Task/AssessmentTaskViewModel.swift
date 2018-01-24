@@ -1,12 +1,14 @@
 import ResearchKit
 import CareKit
 
-class AssessmentTaskViewModel: NSObject {
-    private let coordinator: AssessmentTaskCoordinator
+class AssessmentTaskViewModel: NSObject, ViewModelType {
+    typealias Coordinator = AssessmentTaskCoordinator
+
+    let coordinator: Coordinator
     private let assessment: Assessment
     private let storeManager: CarePlanStoreManager
 
-    init(coordinator: AssessmentTaskCoordinator, assessment: Assessment, storeManager: CarePlanStoreManager) {
+    init(coordinator: Coordinator, assessment: Assessment, storeManager: CarePlanStoreManager) {
         self.coordinator = coordinator
         self.assessment = assessment
         self.storeManager = storeManager

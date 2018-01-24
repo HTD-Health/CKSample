@@ -1,8 +1,10 @@
 import CareKit
 
-class SymptomTrackerViewModel: NSObject, OCKSymptomTrackerViewControllerDelegate {
+class SymptomTrackerViewModel: NSObject, OCKSymptomTrackerViewControllerDelegate, ViewModelType {
 
-    private let coordinator: SymptomTrackerCoordinator
+    typealias Coordinator = SymptomTrackerCoordinator
+
+    let coordinator: Coordinator
     private let activityManager: ActivityManager
 
     init(activityManager: ActivityManager, coordinator: SymptomTrackerCoordinator) {

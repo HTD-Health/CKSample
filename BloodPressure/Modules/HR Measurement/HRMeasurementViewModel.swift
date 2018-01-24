@@ -1,14 +1,17 @@
 import Foundation
 
-class HRMeasurementViewModel {
+class HRMeasurementViewModel: ViewModelType {
+
+    typealias Coordinator = HRMeasurementCoordinator
+
     private let bluetoothManager: BluetoothManager
 
+    let coordinator: Coordinator
     weak var viewController: HRMeasurementViewController?
-    var coordinator: HRMeasurementCoordinator
 
     private var values = [Int]()
 
-    init(bluetoothManager: BluetoothManager, coordinator: HRMeasurementCoordinator) {
+    init(bluetoothManager: BluetoothManager, coordinator: Coordinator) {
         self.bluetoothManager = bluetoothManager
         self.coordinator = coordinator
         bluetoothManager.didReceiveHRValue = { hrMeasurement in
@@ -18,16 +21,12 @@ class HRMeasurementViewModel {
             self.viewController?.hrAverageValueDidUpdate(averageValue: average)
         }
     }
-}
-
-extension HRMeasurementViewModel: ViewModelType {
-    typealias Coordinator = HRMeasurementCoordinator
-
-    func viewDidLoad() {
-        bluetoothManager.startMeasurement()
-    }
 
     func doneTapped() {
         coordinator.measurementDidFinish()
+    }
+
+    func viewDidLoad() {
+        bluetoothManager.startMeasurement()
     }
 }

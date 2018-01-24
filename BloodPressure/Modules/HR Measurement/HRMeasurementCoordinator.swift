@@ -2,7 +2,6 @@ import UIKit
 
 class HRMeasurementCoordinator: CoordinatorType {
     weak var navigationController: UINavigationController?
-    weak var delegate: CoordinatorDelegate?
     weak var view: UIViewController?
     private let bluetoothManager: BluetoothManager
 
@@ -22,6 +21,5 @@ class HRMeasurementCoordinator: CoordinatorType {
 
     func measurementDidFinish() {
         navigationController?.popViewController(animated: true)
-        self.delegate?.coordinatorDidFinish(coordinator: self)
     }
 }

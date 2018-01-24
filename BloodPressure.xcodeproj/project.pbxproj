@@ -19,6 +19,7 @@
 		881266031FED39070080C931 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881266011FED39070080C931 /* RootViewController.xib */; };
 		881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881266041FED44DE0080C931 /* MainTabBarController.swift */; };
 		881266071FED44DE0080C931 /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881266051FED44DE0080C931 /* MainTabBarController.xib */; };
+		8822AFAE2018AD24002A9B83 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8822AFAD2018AD24002A9B83 /* ViewControllerType.swift */; };
 		8845D2151FF82A4300F44192 /* SymptomTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D2141FF82A4300F44192 /* SymptomTrackerViewController.swift */; };
 		8845D2171FF83CB200F44192 /* SymptomTrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D2161FF83CB200F44192 /* SymptomTrackerViewModel.swift */; };
 		8845D21B1FF90EFF00F44192 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D21A1FF90EFF00F44192 /* DependencyContainer.swift */; };
@@ -37,8 +38,8 @@
 		8889BDBD2008C7C800C2A2E5 /* HRMeasurementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8889BDBB2008C7C800C2A2E5 /* HRMeasurementViewController.xib */; };
 		8889BDC02008E1FC00C2A2E5 /* HRMeasurementCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDBF2008E1FC00C2A2E5 /* HRMeasurementCoordinator.swift */; };
 		8889BDC22008E21F00C2A2E5 /* HRMeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDC12008E21F00C2A2E5 /* HRMeasurementViewModel.swift */; };
-		8889BDC52008F69200C2A2E5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDC42008F69200C2A2E5 /* ViewModel.swift */; };
-		8889BDC72009147500C2A2E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDC62009147500C2A2E5 /* Coordinator.swift */; };
+		8889BDC52008F69200C2A2E5 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDC42008F69200C2A2E5 /* ViewModelType.swift */; };
+		8889BDC72009147500C2A2E5 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889BDC62009147500C2A2E5 /* CoordinatorType.swift */; };
 		88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */; };
 		88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */; };
 		88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD71FF3BCAB00C30FB5 /* App.swift */; };
@@ -77,6 +78,7 @@
 		881266011FED39070080C931 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		881266041FED44DE0080C931 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		881266051FED44DE0080C931 /* MainTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarController.xib; sourceTree = "<group>"; };
+		8822AFAD2018AD24002A9B83 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
 		8845D2141FF82A4300F44192 /* SymptomTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTrackerViewController.swift; sourceTree = "<group>"; };
 		8845D2161FF83CB200F44192 /* SymptomTrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTrackerViewModel.swift; sourceTree = "<group>"; };
 		8845D21A1FF90EFF00F44192 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
@@ -99,8 +101,8 @@
 		8889BDBB2008C7C800C2A2E5 /* HRMeasurementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HRMeasurementViewController.xib; sourceTree = "<group>"; };
 		8889BDBF2008E1FC00C2A2E5 /* HRMeasurementCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMeasurementCoordinator.swift; sourceTree = "<group>"; };
 		8889BDC12008E21F00C2A2E5 /* HRMeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMeasurementViewModel.swift; sourceTree = "<group>"; };
-		8889BDC42008F69200C2A2E5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		8889BDC62009147500C2A2E5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8889BDC42008F69200C2A2E5 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		8889BDC62009147500C2A2E5 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarePlanStoreManager.swift; sourceTree = "<group>"; };
 		88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		88A68DD71FF3BCAB00C30FB5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -186,9 +188,9 @@
 			children = (
 				8889BDC32008F67B00C2A2E5 /* Generic */,
 				8889BDAB2007778A00C2A2E5 /* BT Selection */,
+				8889BDBE2008E0A800C2A2E5 /* HR Measurement */,
 				8845D2191FF83F1D00F44192 /* Symptom Tracker */,
 				880065131FFB96CC0074E6EC /* Assessment Task */,
-				8889BDBE2008E0A800C2A2E5 /* HR Measurement */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -272,8 +274,9 @@
 		8889BDC32008F67B00C2A2E5 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				8889BDC42008F69200C2A2E5 /* ViewModel.swift */,
-				8889BDC62009147500C2A2E5 /* Coordinator.swift */,
+				8889BDC42008F69200C2A2E5 /* ViewModelType.swift */,
+				8889BDC62009147500C2A2E5 /* CoordinatorType.swift */,
+				8822AFAD2018AD24002A9B83 /* ViewControllerType.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -653,7 +656,7 @@
 				8889BDBC2008C7C800C2A2E5 /* HRMeasurementViewController.swift in Sources */,
 				8889BDC22008E21F00C2A2E5 /* HRMeasurementViewModel.swift in Sources */,
 				8845D2171FF83CB200F44192 /* SymptomTrackerViewModel.swift in Sources */,
-				8889BDC52008F69200C2A2E5 /* ViewModel.swift in Sources */,
+				8889BDC52008F69200C2A2E5 /* ViewModelType.swift in Sources */,
 				8845D21D1FFAAAFE00F44192 /* Activity.swift in Sources */,
 				8800651B1FFD24AD0074E6EC /* BluetoothManager.swift in Sources */,
 				881266021FED39070080C931 /* RootViewController.swift in Sources */,
@@ -667,7 +670,7 @@
 				8845D2151FF82A4300F44192 /* SymptomTrackerViewController.swift in Sources */,
 				8802E6B620038BD6004F885E /* HeartRateMeasurement.swift in Sources */,
 				88A68DE41FF4065300C30FB5 /* SymptomTrackerCoordinator.swift in Sources */,
-				8889BDC72009147500C2A2E5 /* Coordinator.swift in Sources */,
+				8889BDC72009147500C2A2E5 /* CoordinatorType.swift in Sources */,
 				8889BDB4200784E100C2A2E5 /* BTSelectionViewController.swift in Sources */,
 				88A68DE21FF3F16600C30FB5 /* BloodPressure.swift in Sources */,
 				8889BDAD2007831A00C2A2E5 /* BTSelectionCoordinator.swift in Sources */,
@@ -675,6 +678,7 @@
 				880065151FFBA8810074E6EC /* AssessmentTaskViewController.swift in Sources */,
 				88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */,
 				8845D2201FFAB74B00F44192 /* SampleData.swift in Sources */,
+				8822AFAE2018AD24002A9B83 /* ViewControllerType.swift in Sources */,
 				88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */,
 				880065121FFB96C70074E6EC /* AssessmentTaskViewModel.swift in Sources */,
 				8889BDB82007C66000C2A2E5 /* PeripheralTableViewCell.swift in Sources */,

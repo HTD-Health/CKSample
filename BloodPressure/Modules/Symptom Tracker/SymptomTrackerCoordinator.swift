@@ -1,16 +1,17 @@
 import CareKit
 import ResearchKit
 
-class SymptomTrackerCoordinator {
+class SymptomTrackerCoordinator: CoordinatorType {
+    var navigationController: UINavigationController?
+
+    func start(in navigationConttoller: UINavigationController) {
+        print("DO NOTHING")
+    }
+
     typealias Factory = CarePlanStoreFactory & SymptomTrackerFactory
 
     private let factory: Factory
     private lazy var storeManager = factory.makeStoreManager()
-    private var navigationController = UINavigationController()
-
-    private lazy var assessmentTaskCoordinator: AssessmentTaskCoordinator = {
-        return AssessmentTaskCoordinator(factory: factory)
-    }()
 
     private lazy var btSelectionCoordinator: BTSelectionCoordinator = {
         return BTSelectionCoordinator()
@@ -28,7 +29,8 @@ class SymptomTrackerCoordinator {
 
         viewController.title = "Symptom Tracker"
         viewController.glyphType = OCKGlyphType.heart
-        navigationController.viewControllers = [viewController]
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.navigationController = navigationController
         return navigationController
     }
 
@@ -38,7 +40,7 @@ class SymptomTrackerCoordinator {
         case .restingHeartRate:
             didSelectHRAssessment(assessment)
         default:
-            assessmentTaskCoordinator.presentAssessmentTask(for: assessment, in: navigationController)
+            self.assessmentTaskCoordinator(for: assessment).start(in: self.navigationController!)
         }
     }
 
@@ -48,12 +50,12 @@ class SymptomTrackerCoordinator {
                                                 preferredStyle: .actionSheet)
 
         let manualAction = UIAlertAction(title: "Manual input", style: .default, handler: { _ in
-            self.assessmentTaskCoordinator.presentAssessmentTask(for: assessment, in: self.navigationController)
+            self.assessmentTaskCoordinator(for: assessment).start(in: self.navigationController!)
         })
 
         let hrSensorAction = UIAlertAction(title: "Heart rate sensor", style: .default, handler: { _ in
             print("Presenting on: \(self.navigationController)")
-            self.btSelectionCoordinator.start(in: self.navigationController)
+            self.btSelectionCoordinator.start(in: self.navigationController!)
         })
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
@@ -64,6 +66,10 @@ class SymptomTrackerCoordinator {
         alertController.addAction(hrSensorAction)
         alertController.addAction(cancelAction)
 
-        navigationController.present(alertController, animated: true, completion: nil)
+        navigationController?.present(alertController, animated: true, completion: nil)
+    }
+
+    private func assessmentTaskCoordinator(for assessment: Assessment) -> AssessmentTaskCoordinator {
+        return AssessmentTaskCoordinator(factory: factory, assessment: assessment)
     }
 }

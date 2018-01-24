@@ -1,6 +1,8 @@
 import UIKit
 
-class HRMeasurementViewController: UIViewController {
+class HRMeasurementViewController: UIViewController, ViewControllerType {
+
+    typealias ViewModel = HRMeasurementViewModel
 
     @IBOutlet weak var hrValueLabel: UILabel!
     @IBOutlet weak var averageHRLabel: UILabel!

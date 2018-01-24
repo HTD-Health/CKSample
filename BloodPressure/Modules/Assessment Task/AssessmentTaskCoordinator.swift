@@ -1,26 +1,26 @@
 import ResearchKit
 import CareKit
 
-class AssessmentTaskCoordinator {
+class AssessmentTaskCoordinator: CoordinatorType {
     typealias Factory = CarePlanStoreFactory
 
     private weak var viewController: UIViewController?
     private let factory: Factory
-    private lazy var storeManager = factory.makeStoreManager()
+    private let assessment: Assessment
 
-    init(factory: Factory) {
+    private lazy var storeManager = factory.makeStoreManager()
+    weak var navigationController: UINavigationController?
+
+    init(factory: Factory, assessment: Assessment) {
         self.factory = factory
+        self.assessment = assessment
     }
 
-    func presentAssessmentTask(for assessment: Assessment, in navigationController: UINavigationController) {
+    func start(in navigationConttoller: UINavigationController) {
         let viewModel = AssessmentTaskViewModel(coordinator: self, assessment: assessment, storeManager: storeManager)
-
-        let taskViewController = AssessmentTaskViewController(task: assessment.task, taskRun: nil)
-        taskViewController.viewModel = viewModel
-        taskViewController.delegate = viewModel
-
+        let taskViewController = AssessmentTaskViewController(viewModel: viewModel, task: assessment.task, taskRun: nil)
         viewController = taskViewController
-        navigationController.present(taskViewController, animated: true, completion: nil)
+        navigationConttoller.present(taskViewController, animated: true, completion: nil)
     }
 
     func dismiss(animated: Bool = true) {

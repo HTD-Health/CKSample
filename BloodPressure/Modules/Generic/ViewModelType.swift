@@ -4,6 +4,7 @@ protocol ViewModelType {
     associatedtype Coordinator: CoordinatorType
 
     var coordinator: Coordinator { get }
+
     func viewDidLoad()
 }
 

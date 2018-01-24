@@ -36,8 +36,8 @@ struct PeripheralViewModel {
 
 class BTSelectionViewModel: ViewModelType {
     typealias Coordinator = BTSelectionCoordinator
-    var coordinator: Coordinator
 
+    let coordinator: Coordinator
     let bluetoothManager: BluetoothManager
 
     let title = "Available HR sensors"

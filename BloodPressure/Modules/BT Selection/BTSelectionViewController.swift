@@ -73,7 +73,7 @@ class BTSelectionViewController: UITableViewController {
             let device = deviceAtIndexPath?(indexPath) else { fatalError() }
 
         cell.viewModel = PeripheralTableViewCell.ViewModel(peripheral: device)
-        
+
         return cell
     }
 

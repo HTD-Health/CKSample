@@ -3,7 +3,6 @@ import CoreBluetooth
 
 class BTSelectionCoordinator: CoordinatorType {
     weak var navigationController: UINavigationController?
-    weak var delegate: CoordinatorDelegate?
 
     func start(in navigationController: UINavigationController) {
         let viewModel = BTSelectionViewModel(bluetoothManager: bluetoothManager, coordinator: self)
@@ -15,7 +14,6 @@ class BTSelectionCoordinator: CoordinatorType {
         self.navigationController = childNavigationController
     }
 
-    
     private lazy var bluetoothManager = BluetoothManager()
 
     func dismiss(animated: Bool = true) {
@@ -23,15 +21,7 @@ class BTSelectionCoordinator: CoordinatorType {
     }
 
     func presentMeasurementVC(for peripheral: CBPeripheral) {
-        guard let navigationConroller = self.navigationController else { return }
         let measurementCoordinator = HRMeasurementCoordinator(bluetoothManager: bluetoothManager)
-        measurementCoordinator.delegate = self
-        measurementCoordinator.start(in: navigationConroller)
-    }
-}
-
-extension BTSelectionCoordinator: CoordinatorDelegate {
-    func coordinatorDidFinish(coordinator: CoordinatorType) {
-        print("measurementCoordinator did finish")
+        measurementCoordinator.start(in: navigationController!)
     }
 }
