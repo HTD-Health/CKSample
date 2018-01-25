@@ -3,6 +3,7 @@ import ResearchKit
 class AssessmentTaskViewController: ORKTaskViewController, ViewControllerType {
 
     typealias ViewModel = AssessmentTaskViewModel
+    
     let viewModel: ViewModel
 
     init(viewModel: ViewModel, task: ORKTask?, taskRun: UUID?) {

@@ -19,7 +19,7 @@ class AssessmentTaskViewModel: NSObject, ViewModelType {
 extension AssessmentTaskViewModel: ORKTaskViewControllerDelegate {
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         defer {
-            coordinator.dismiss()
+            coordinator.stop()
         }
         let result = taskViewController.result
         let carePlanResult = assessment.buildResultForTaskResult(result)
@@ -65,5 +65,4 @@ extension AssessmentTaskViewModel: ORKTaskViewControllerDelegate {
             }
         }
     }
-
 }

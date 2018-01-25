@@ -1,29 +1,24 @@
 import ResearchKit
 import CareKit
 
-class AssessmentTaskCoordinator: CoordinatorType {
+class AssessmentTaskCoordinator: ModalCoordinatorType {
     typealias Factory = CarePlanStoreFactory
+    typealias ViewController = AssessmentTaskViewController
 
-    private weak var viewController: UIViewController?
     private let factory: Factory
     private let assessment: Assessment
+    let navigationController: UINavigationController
 
     private lazy var storeManager = factory.makeStoreManager()
-    weak var navigationController: UINavigationController?
 
-    init(factory: Factory, assessment: Assessment) {
+    init(factory: Factory, assessment: Assessment, navigationController: UINavigationController) {
         self.factory = factory
         self.assessment = assessment
+        self.navigationController = navigationController
     }
 
-    func start(in navigationConttoller: UINavigationController) {
+    func makeViewController() -> UIViewController {
         let viewModel = AssessmentTaskViewModel(coordinator: self, assessment: assessment, storeManager: storeManager)
-        let taskViewController = AssessmentTaskViewController(viewModel: viewModel, task: assessment.task, taskRun: nil)
-        viewController = taskViewController
-        navigationConttoller.present(taskViewController, animated: true, completion: nil)
-    }
-
-    func dismiss(animated: Bool = true) {
-        viewController?.dismiss(animated: animated, completion: nil)
+        return ViewController(viewModel: viewModel, task: assessment.task, taskRun: nil)
     }
 }

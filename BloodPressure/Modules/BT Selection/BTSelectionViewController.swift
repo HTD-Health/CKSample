@@ -8,9 +8,10 @@
 
 import UIKit
 
-class BTSelectionViewController: UITableViewController {
-
-    let viewModel: BTSelectionViewModel
+class BTSelectionViewController: UITableViewController, ViewControllerType {
+    typealias ViewModel = BTSelectionViewModel
+    
+    let viewModel: ViewModel
 
     var numberOfSections: (() -> Int)?
     var numberOfRowsInSection: ((Int) -> Int)?
@@ -49,6 +50,7 @@ class BTSelectionViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        viewModel.viewDidLoad()
 
     }
 

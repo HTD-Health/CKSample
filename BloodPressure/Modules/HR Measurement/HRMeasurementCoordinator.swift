@@ -1,25 +1,31 @@
 import UIKit
 
-class HRMeasurementCoordinator: CoordinatorType {
-    weak var navigationController: UINavigationController?
-    weak var view: UIViewController?
-    private let bluetoothManager: BluetoothManager
+class HRMeasurementCoordinator: ModalCoordinatorType {
+    typealias ViewController = HRMeasurementViewController
 
-    init(bluetoothManager: BluetoothManager) {
-        self.bluetoothManager = bluetoothManager
+    var navigationController: UINavigationController
+    weak var viewController: ViewController?
+    private lazy var bluetoothManager = BluetoothManager()
+    private let assessment: Assessment
+    private weak var childNavigationController: UINavigationController?
+
+    init(navigationController: UINavigationController, assessment: Assessment) {
+        self.navigationController = navigationController
+        self.assessment = assessment
     }
 
-    func start(in navigationController: UINavigationController) {
+    func makeViewController() -> UIViewController {
         let viewModel = HRMeasurementViewModel(bluetoothManager: bluetoothManager, coordinator: self)
         let viewController = HRMeasurementViewController(viewModel: viewModel)
         viewModel.viewController = viewController
-        navigationController.pushViewController(viewController, animated: true)
+        let childNavigationController = UINavigationController(rootViewController: viewController)
+        self.childNavigationController = childNavigationController
+        return childNavigationController
+    }
 
-        self.navigationController = navigationController
-        self.view = viewController
-   }
-
-    func measurementDidFinish() {
-        navigationController?.popViewController(animated: true)
+    func presentBTSelection() {
+        let btSelectionCoordinator = BTSelectionCoordinator(navigationController: childNavigationController!,
+                                                            bluetoothManager: bluetoothManager)
+        btSelectionCoordinator.start()
     }
 }

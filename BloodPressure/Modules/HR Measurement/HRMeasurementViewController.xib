@@ -13,7 +13,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HRMeasurementViewController" customModule="BloodPressure" customModuleProvider="target">
             <connections>
+                <outlet property="actionButton" destination="mrK-by-wEW" id="tMs-tj-dvI"/>
                 <outlet property="averageHRLabel" destination="nIr-os-jCG" id="PmY-E4-8Qk"/>
+                <outlet property="deviceButton" destination="14J-fD-41S" id="FIw-dK-A5M"/>
+                <outlet property="deviceStatusLabel" destination="6oX-mf-JIH" id="uuc-OV-25S"/>
                 <outlet property="hrValueLabel" destination="UKa-9i-ie3" id="CBQ-rm-c5I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -53,10 +56,31 @@
                         <action selector="doneTapped:" destination="-1" eventType="touchUpInside" id="pdK-vb-byg"/>
                     </connections>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hba-he-vHo">
+                    <rect key="frame" x="80" y="614" width="215.5" height="33"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oX-mf-JIH">
+                            <rect key="frame" x="0.0" y="0.0" width="108.5" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14J-fD-41S">
+                            <rect key="frame" x="116.5" y="0.0" width="99" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Device name"/>
+                            <connections>
+                                <action selector="deviceButtonTapped:" destination="-1" eventType="touchUpInside" id="VWO-Sc-WhV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="hba-he-vHo" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="3Xc-aP-cci"/>
                 <constraint firstItem="fJO-6p-G3W" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-30" id="E7k-Sy-yIa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hba-he-vHo" secondAttribute="bottom" constant="20" id="GW2-SJ-eSM"/>
                 <constraint firstItem="mrK-by-wEW" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="R0L-IQ-IJS"/>
                 <constraint firstItem="fJO-6p-G3W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="WxB-fP-ITU"/>
                 <constraint firstItem="fJO-6p-G3W" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hib-dZ-y5J"/>
@@ -64,13 +88,5 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2D5-dG-G3i">
-            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <nil key="textColor"/>
-            <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="425" y="222"/>
-        </label>
     </objects>
 </document>

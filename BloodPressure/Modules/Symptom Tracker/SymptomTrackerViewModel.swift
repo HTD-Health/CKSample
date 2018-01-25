@@ -7,7 +7,7 @@ class SymptomTrackerViewModel: NSObject, OCKSymptomTrackerViewControllerDelegate
     let coordinator: Coordinator
     private let activityManager: ActivityManager
 
-    init(activityManager: ActivityManager, coordinator: SymptomTrackerCoordinator) {
+    init(activityManager: ActivityManager, coordinator: Coordinator) {
         self.activityManager = activityManager
         self.coordinator = coordinator
         super.init()

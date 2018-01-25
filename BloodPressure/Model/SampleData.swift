@@ -11,12 +11,19 @@ class SampleData {
     ]
 
     init(carePlanStore: OCKCarePlanStore) {
-        activities.forEach {
-            carePlanStore.add($0.carePlanActivity, completion: { (_, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-            })
+        carePlanStore.activities { [unowned self] (_, carePlanActivities, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            guard carePlanActivities.isEmpty else { return }
+
+            self.activities.forEach {
+                carePlanStore.add($0.carePlanActivity, completion: { (_, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
+                })
+            }
         }
     }
 }

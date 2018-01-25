@@ -6,6 +6,9 @@ class HRMeasurementViewController: UIViewController, ViewControllerType {
 
     @IBOutlet weak var hrValueLabel: UILabel!
     @IBOutlet weak var averageHRLabel: UILabel!
+    @IBOutlet weak var deviceStatusLabel: UILabel!
+    @IBOutlet weak var deviceButton: UIButton!
+    @IBOutlet weak var actionButton: UIButton!
 
     let viewModel: HRMeasurementViewModel
 
@@ -21,20 +24,44 @@ class HRMeasurementViewController: UIViewController, ViewControllerType {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Heart rate"
+        viewModel.updateDeviceStatusHandler = { (status, name) in
+            self.deviceStatusLabel.text = status
+            self.deviceButton.setTitle(name, for: .normal)
+        }
+        viewModel.updateMeasurementStatus = { [unowned self] (measurementStatus) in
+            self.updateMeasurementStatus(status: measurementStatus)
+        }
         viewModel.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
     }
 
     @IBAction func doneTapped(_ sender: Any) {
         viewModel.doneTapped()
     }
-}
 
-extension HRMeasurementViewController {
-    func hrValueDidUpdate(hrValue: Int) {
-        hrValueLabel.text = "\(hrValue)"
+    @IBAction func deviceButtonTapped(_ sender: UIButton) {
+        viewModel.deviceButtonTapped()
     }
 
-    func hrAverageValueDidUpdate(averageValue: Int) {
-        averageHRLabel.text = "Average: \(averageValue)"
+    private func updateMeasurementStatus(status: HRMeasurementStatus) {
+        switch status {
+        case .disconnected:
+            actionButton.setTitle("Start", for: .normal)
+            actionButton.isEnabled = false
+        case .connected(let value):
+            actionButton.setTitle("Start", for: .normal)
+            actionButton.isEnabled = true
+            hrValueLabel.text = value
+            averageHRLabel.text = "Average: --"
+        case .recording(let value, let average):
+            actionButton.setTitle("Stop", for: .normal)
+            actionButton.isEnabled = true
+            hrValueLabel.text = value
+            averageHRLabel.text = average
+        }
     }
 }

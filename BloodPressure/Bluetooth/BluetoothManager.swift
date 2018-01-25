@@ -26,6 +26,13 @@ class BluetoothManager: NSObject {
     private let centralManager: CBCentralManager
     private var discoveredPeripherals = [CBPeripheral]()
 
+    var discoveredPeripheralViewModels: [PeripheralViewModel] {
+        let peripherals = discoveredPeripherals.map {
+            return PeripheralViewModel(peripheral: $0)
+        }
+        return peripherals
+    }
+
     var devicesUpdatedHandler: (([PeripheralViewModel]) -> Void)?
     var didConnectHandler: ((CBPeripheral) -> Void)?
 
@@ -45,7 +52,7 @@ class BluetoothManager: NSObject {
     }
 
     func startMeasurement() {
-        connectedPeripheral?.discoverServices(nil)
+        //connectedPeripheral?.discoverServices(nil)
     }
 }
 
@@ -74,6 +81,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         connectedPeripheral = peripheral
         didConnectHandler?(peripheral)
+        peripheral.discoverServices(nil)
     }
 }
 
@@ -132,11 +140,11 @@ extension BluetoothManager {
             sortPeripherals()
             printPeripherals()
 
-            let devices = discoveredPeripherals.map {
-                return PeripheralViewModel(peripheral: $0)
-            }
+//            let devices = discoveredPeripherals.map {
+//                return PeripheralViewModel(peripheral: $0)
+//            }
 
-            devicesUpdatedHandler?(devices)
+            devicesUpdatedHandler?(discoveredPeripheralViewModels)
 
 //            if let name = peripheral.name, name.starts(with: "Polar") {
 //                peripheral.delegate = self

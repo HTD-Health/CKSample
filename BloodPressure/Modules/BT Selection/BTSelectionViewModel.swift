@@ -53,7 +53,7 @@ class BTSelectionViewModel: ViewModelType {
                 return self.peripherals[indexPath.row]
             }
             viewController?.leftBarButtonItemHandler = {
-                self.coordinator.dismiss()
+                self.coordinator.stop()
             }
             viewController?.didSelectRowAtIndexPath = { indexPath in
                 guard let peripheral = self.peripherals[indexPath.row].peripheral else { return }
@@ -75,7 +75,12 @@ class BTSelectionViewModel: ViewModelType {
         }
 
         self.bluetoothManager.didConnectHandler = { peripheral in
-            self.coordinator.presentMeasurementVC(for: peripheral)
+            self.coordinator.stop()
         }
+    }
+
+    func viewDidLoad() {
+        peripherals = bluetoothManager.discoveredPeripheralViewModels
+        self.viewController?.tableView.reloadData()
     }
 }
