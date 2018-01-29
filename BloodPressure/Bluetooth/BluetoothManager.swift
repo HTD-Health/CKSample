@@ -50,10 +50,6 @@ class BluetoothManager: NSObject {
         peripheral.delegate = self
         centralManager.connect(peripheral, options: nil)
     }
-
-    func startMeasurement() {
-        //connectedPeripheral?.discoverServices(nil)
-    }
 }
 
 extension BluetoothManager: CBCentralManagerDelegate {
@@ -73,8 +69,6 @@ extension BluetoothManager: CBCentralManagerDelegate {
     }
 
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
-        print("ADVERTISEMENT DATA:")
-        print(advertisementData)
         addPeripheral(peripheral)
     }
 
@@ -87,34 +81,17 @@ extension BluetoothManager: CBCentralManagerDelegate {
 
 extension BluetoothManager: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        print(#function)
-        peripheral.services?.forEach {
-            print(String(describing: $0))
-            if $0.uuid == Service.heartRate.uuid {
-                peripheral.discoverCharacteristics(nil, for: $0)
-            }
-        }
+        peripheral.services?
+            .filter { $0.uuid == Service.heartRate.uuid }
+            .forEach { peripheral.discoverCharacteristics(nil, for: $0)}
     }
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        print(#function)
         if service.uuid == Service.heartRate.uuid {
-            service.characteristics?.forEach {
-                switch $0.uuid {
-                case Characteristic.heartRate.uuid:
-                    peripheral.setNotifyValue(true, for: $0)
-//                case Characteristic.heardRateDescriptor.uuid:
-//                    peripheral.readValue(for: $0)
-                default:
-                    break
-                }
-            }
+            service.characteristics?
+                .filter { $0.uuid == Characteristic.heartRate.uuid }
+                .forEach { peripheral.setNotifyValue(true, for: $0) }
         }
-    }
-
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
-        print(#function)
-        print(String(describing: service.includedServices))
     }
 
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
@@ -123,12 +100,9 @@ extension BluetoothManager: CBPeripheralDelegate {
             guard let data = characteristic.value else { break }
             let hrMeasurement = HeartRateMeasurement(data: data)
             self.didReceiveHRValue?(hrMeasurement)
-        case Characteristic.heardRateDescriptor.uuid:
-            print("DESC")
         default:
             break
         }
-
     }
 }
 
@@ -140,16 +114,7 @@ extension BluetoothManager {
             sortPeripherals()
             printPeripherals()
 
-//            let devices = discoveredPeripherals.map {
-//                return PeripheralViewModel(peripheral: $0)
-//            }
-
             devicesUpdatedHandler?(discoveredPeripheralViewModels)
-
-//            if let name = peripheral.name, name.starts(with: "Polar") {
-//                peripheral.delegate = self
-//                centralManager.connect(peripheral, options: nil)
-//            }
         }
     }
 

@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HRMeasurementViewController: UIViewController, ViewControllerType {
 
@@ -11,6 +13,7 @@ class HRMeasurementViewController: UIViewController, ViewControllerType {
     @IBOutlet weak var actionButton: UIButton!
 
     let viewModel: HRMeasurementViewModel
+    let disposeBag = DisposeBag()
 
     init(viewModel: HRMeasurementViewModel) {
         self.viewModel = viewModel
@@ -24,13 +27,17 @@ class HRMeasurementViewController: UIViewController, ViewControllerType {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Heart rate"
+
         viewModel.updateDeviceStatusHandler = { (status, name) in
             self.deviceStatusLabel.text = status
             self.deviceButton.setTitle(name, for: .normal)
         }
-        viewModel.updateMeasurementStatus = { [unowned self] (measurementStatus) in
-            self.updateMeasurementStatus(status: measurementStatus)
-        }
+
+        let hrValueDriver = viewModel.heartRateText.asDriver()
+        let averageHrValueDriver = viewModel.averageHeartRateText.asDriver()
+
+        hrValueDriver.drive(hrValueLabel.rx.text).disposed(by: disposeBag)
+        averageHrValueDriver.drive(averageHRLabel.rx.text).disposed(by: disposeBag)
         viewModel.viewDidLoad()
     }
 
@@ -40,28 +47,28 @@ class HRMeasurementViewController: UIViewController, ViewControllerType {
     }
 
     @IBAction func doneTapped(_ sender: Any) {
-        viewModel.doneTapped()
+        viewModel.actionButtonTapped()
     }
 
     @IBAction func deviceButtonTapped(_ sender: UIButton) {
         viewModel.deviceButtonTapped()
     }
 
-    private func updateMeasurementStatus(status: HRMeasurementStatus) {
-        switch status {
-        case .disconnected:
-            actionButton.setTitle("Start", for: .normal)
-            actionButton.isEnabled = false
-        case .connected(let value):
-            actionButton.setTitle("Start", for: .normal)
-            actionButton.isEnabled = true
-            hrValueLabel.text = value
-            averageHRLabel.text = "Average: --"
-        case .recording(let value, let average):
-            actionButton.setTitle("Stop", for: .normal)
-            actionButton.isEnabled = true
-            hrValueLabel.text = value
-            averageHRLabel.text = average
-        }
-    }
+//    private func updateMeasurementStatus(status: HRMeasurementStatus) {
+//        switch status {
+//        case .disconnected:
+//            actionButton.setTitle("Start", for: .normal)
+//            actionButton.isEnabled = false
+//        case .connected(let value):
+//            actionButton.setTitle("Start", for: .normal)
+//            actionButton.isEnabled = true
+//            hrValueLabel.text = value
+//            averageHRLabel.text = "Average: --"
+//        case .recording(let value, let average):
+//            actionButton.setTitle("Stop", for: .normal)
+//            actionButton.isEnabled = true
+//            hrValueLabel.text = value
+//            averageHRLabel.text = average
+//        }
+//    }
 }

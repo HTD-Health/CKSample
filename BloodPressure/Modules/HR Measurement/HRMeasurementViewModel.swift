@@ -1,4 +1,6 @@
 import Foundation
+import RxSwift
+import RxCocoa
 
 class HRMeasurementViewModel: ViewModelType {
 
@@ -10,26 +12,25 @@ class HRMeasurementViewModel: ViewModelType {
     weak var viewController: HRMeasurementViewController?
 
     var updateDeviceStatusHandler: ((_ status: String, _ deviceName: String) -> Void)?
-    var updateMeasurementStatus: ((HRMeasurementStatus) -> Void)?
 
     private var isRecording: Bool = false
     private var values = [Int]()
 
+    let hrValue: Variable<HeartRateMeasurement?> = Variable(nil)
+
+    let heartRateText = Variable<String>("--")
+    let averageHeartRateText = Variable<String>("--")
+
+    let measurementStatus = Variable<HRMeasurementStatus>(.disconnected)
+
     init(bluetoothManager: BluetoothManager, coordinator: Coordinator) {
         self.bluetoothManager = bluetoothManager
         self.coordinator = coordinator
-        bluetoothManager.didReceiveHRValue = { [unowned self] hrMeasurement in
-            if self.isRecording {
-                self.values.append(hrMeasurement.heartRate)
-                let average = self.values.reduce(0, +) / self.values.count
-                self.updateMeasurementStatus?(HRMeasurementStatus.recording("\(hrMeasurement.heartRate)", "Average: \(average)"))
-            } else {
-                self.updateMeasurementStatus?(HRMeasurementStatus.connected("\(hrMeasurement.heartRate)"))
-            }
-        }
+
+        self.setUpHRValueObserving()
     }
 
-    func doneTapped() {
+    func actionButtonTapped() {
         isRecording = !isRecording
     }
 
@@ -48,9 +49,23 @@ class HRMeasurementViewModel: ViewModelType {
         if let peripheral = bluetoothManager.connectedPeripheral {
             status = "Connected: "
             name = "\(peripheral.name ?? "Unknown")"
-            updateMeasurementStatus?(HRMeasurementStatus.connected("--"))
+            measurementStatus.value = .connected("__")
         }
         updateDeviceStatusHandler?(status, name)
+    }
+
+    private func setUpHRValueObserving() {
+        bluetoothManager.didReceiveHRValue = { [unowned self] hrMeasurement in
+
+            self.hrValue.value = hrMeasurement
+            self.heartRateText.value = "\(hrMeasurement.heartRate)"
+
+            if self.isRecording {
+                self.values.append(hrMeasurement.heartRate)
+                let average = self.values.reduce(0, +) / self.values.count
+                self.averageHeartRateText.value = "Average: \(average)"
+            }
+        }
     }
 }
 

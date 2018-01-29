@@ -43,7 +43,6 @@
 		88A68DD11FF3AB3200C30FB5 /* CarePlanStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */; };
 		88A68DD61FF3B64C00C30FB5 /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */; };
 		88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DD71FF3BCAB00C30FB5 /* App.swift */; };
-		88A68DDC1FF3CF9B00C30FB5 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */; };
 		88A68DE01FF3E2CB00C30FB5 /* RestingHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */; };
 		88A68DE21FF3F16600C30FB5 /* BloodPressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DE11FF3F16600C30FB5 /* BloodPressure.swift */; };
 		88A68DE41FF4065300C30FB5 /* SymptomTrackerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A68DE31FF4065300C30FB5 /* SymptomTrackerCoordinator.swift */; };
@@ -106,7 +105,6 @@
 		88A68DD01FF3AB3200C30FB5 /* CarePlanStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarePlanStoreManager.swift; sourceTree = "<group>"; };
 		88A68DD51FF3B64C00C30FB5 /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		88A68DD71FF3BCAB00C30FB5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		88A68DDF1FF3E2CB00C30FB5 /* RestingHeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingHeartRate.swift; sourceTree = "<group>"; };
 		88A68DE11FF3F16600C30FB5 /* BloodPressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressure.swift; sourceTree = "<group>"; };
 		88A68DE31FF4065300C30FB5 /* SymptomTrackerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTrackerCoordinator.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 				88A68DD21FF3B5B000C30FB5 /* Library */,
 				88A68DD71FF3BCAB00C30FB5 /* App.swift */,
 				8845D21A1FF90EFF00F44192 /* DependencyContainer.swift */,
-				88A68DDB1FF3CF9B00C30FB5 /* Screens.swift */,
 				8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */,
 				881266001FED39070080C931 /* RootViewController.swift */,
 				881266011FED39070080C931 /* RootViewController.xib */,
@@ -662,7 +659,6 @@
 				881266021FED39070080C931 /* RootViewController.swift in Sources */,
 				881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */,
 				88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */,
-				88A68DDC1FF3CF9B00C30FB5 /* Screens.swift in Sources */,
 				8889BDC02008E1FC00C2A2E5 /* HRMeasurementCoordinator.swift in Sources */,
 				8889BDB12007840F00C2A2E5 /* BTSelectionViewModel.swift in Sources */,
 				880065101FFB93CA0074E6EC /* AssessmentTaskCoordinator.swift in Sources */,
