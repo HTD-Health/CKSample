@@ -1,6 +1,6 @@
 import Foundation
 
-struct HeartRateMeasurement {
+struct BTHeartRateMeasurement {
     enum SensorContact: UInt8 {
         case unsupported
         case turnedOff

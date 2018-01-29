@@ -17,7 +17,7 @@ class HeartRateTests: XCTestCase {
         let dataArray: [UInt8] = [6, 128]
         let data = Data(bytes: dataArray)
 
-        let hrMeas = HeartRateMeasurement(data: data)
+        let hrMeas = BTHeartRateMeasurement(data: data)
 
         assert(hrMeas.sensorContact == .contactOk)
         assert(hrMeas.heartRate == 128)
@@ -27,7 +27,7 @@ class HeartRateTests: XCTestCase {
 
     func testHRMeas2() {
         let data = Data(bytes: [7, 1, 1])
-        let hrMeas = HeartRateMeasurement(data: data)
+        let hrMeas = BTHeartRateMeasurement(data: data)
         assert(hrMeas.sensorContact == .contactOk)
         assert(hrMeas.heartRate == 257)
         assert(hrMeas.energyExpended == 0)
@@ -40,7 +40,7 @@ class HeartRateTests: XCTestCase {
         dataArray.append(contentsOf: UInt16(0xFFFF).to8BitArray())
         dataArray.append(contentsOf: UInt16(0xFFFF).to8BitArray())
         let data = Data(bytes: dataArray)
-        let hrMeas = HeartRateMeasurement(data: data)
+        let hrMeas = BTHeartRateMeasurement(data: data)
         assert(hrMeas.sensorContact == .unsupported)
         assert(hrMeas.heartRate == 0xFFFF)
         assert(hrMeas.energyExpended == 0xFFFF)
@@ -54,7 +54,7 @@ class HeartRateTests: XCTestCase {
         dataArray.append(contentsOf: UInt16(0xFFFF).to8BitArray())
         dataArray.append(contentsOf: UInt16(0xFFFF).to8BitArray())
         let data = Data(bytes: dataArray)
-        let hrMeas = HeartRateMeasurement(data: data)
+        let hrMeas = BTHeartRateMeasurement(data: data)
         assert(hrMeas.sensorContact == .contactOk)
         assert(hrMeas.heartRate == 0xFFFF)
         assert(hrMeas.energyExpended == 0)

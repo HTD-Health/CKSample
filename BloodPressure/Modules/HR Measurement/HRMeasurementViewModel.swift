@@ -12,17 +12,17 @@ class HRMeasurementViewModel: ViewModelType {
     weak var viewController: HRMeasurementViewController?
 
     var updateDeviceStatusHandler: ((_ status: String, _ deviceName: String) -> Void)?
+    var updateMeasurementStatusHandler: ((_ isRecording: Bool) -> Void)?
 
     private var isRecording: Bool = false
     private var values = [Int]()
 
-    let hrValue: Variable<HeartRateMeasurement?> = Variable(nil)
+    let hrValue: Variable<BTHeartRateMeasurement?> = Variable(nil)
 
     let heartRateText = Variable<String>("--")
     let averageHeartRateText = Variable<String>("--")
 
     let measurementStatus = Variable<HRMeasurementStatus>(.disconnected)
-
     init(bluetoothManager: BluetoothManager, coordinator: Coordinator) {
         self.bluetoothManager = bluetoothManager
         self.coordinator = coordinator
@@ -32,6 +32,16 @@ class HRMeasurementViewModel: ViewModelType {
 
     func actionButtonTapped() {
         isRecording = !isRecording
+
+        updateMeasurementStatusHandler?(isRecording)
+        if !isRecording {
+            // Store recording in a file
+            let hrMeasurement = HRMeasurement(deviceName: bluetoothManager.connectedPeripheral?.name ?? "Unknown name",
+                                              values: values,
+                                              date: Date())
+            FileStorage.store(hrMeasurement)
+            coordinator.stop()
+       }
     }
 
     func deviceButtonTapped() {

@@ -28,9 +28,13 @@ class HRMeasurementViewController: UIViewController, ViewControllerType {
         super.viewDidLoad()
         title = "Heart rate"
 
-        viewModel.updateDeviceStatusHandler = { (status, name) in
+        viewModel.updateDeviceStatusHandler = { [unowned self] (status, name) in
             self.deviceStatusLabel.text = status
             self.deviceButton.setTitle(name, for: .normal)
+        }
+
+        viewModel.updateMeasurementStatusHandler = { [unowned self] (isRecording) in
+            self.actionButton.setTitle(isRecording ? "Finish" : "Start", for: .normal)
         }
 
         let hrValueDriver = viewModel.heartRateText.asDriver()
@@ -54,21 +58,17 @@ class HRMeasurementViewController: UIViewController, ViewControllerType {
         viewModel.deviceButtonTapped()
     }
 
-//    private func updateMeasurementStatus(status: HRMeasurementStatus) {
-//        switch status {
-//        case .disconnected:
-//            actionButton.setTitle("Start", for: .normal)
-//            actionButton.isEnabled = false
-//        case .connected(let value):
-//            actionButton.setTitle("Start", for: .normal)
-//            actionButton.isEnabled = true
-//            hrValueLabel.text = value
-//            averageHRLabel.text = "Average: --"
-//        case .recording(let value, let average):
-//            actionButton.setTitle("Stop", for: .normal)
-//            actionButton.isEnabled = true
-//            hrValueLabel.text = value
-//            averageHRLabel.text = average
-//        }
-//    }
+    private func updateMeasurementStatus(status: HRMeasurementStatus) {
+        switch status {
+        case .disconnected:
+            actionButton.setTitle("Start", for: .normal)
+            actionButton.isEnabled = false
+        case .connected(_):
+            actionButton.setTitle("Start", for: .normal)
+            actionButton.isEnabled = true
+        case .recording(_, _):
+            actionButton.setTitle("Finish", for: .normal)
+            actionButton.isEnabled = true
+        }
+    }
 }

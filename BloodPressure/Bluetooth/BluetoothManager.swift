@@ -36,7 +36,7 @@ class BluetoothManager: NSObject {
     var devicesUpdatedHandler: (([PeripheralViewModel]) -> Void)?
     var didConnectHandler: ((CBPeripheral) -> Void)?
 
-    var didReceiveHRValue: ((HeartRateMeasurement) -> Void)?
+    var didReceiveHRValue: ((BTHeartRateMeasurement) -> Void)?
 
     private(set) var connectedPeripheral: CBPeripheral?
 
@@ -98,7 +98,7 @@ extension BluetoothManager: CBPeripheralDelegate {
         switch characteristic.uuid {
         case Characteristic.heartRate.uuid:
             guard let data = characteristic.value else { break }
-            let hrMeasurement = HeartRateMeasurement(data: data)
+            let hrMeasurement = BTHeartRateMeasurement(data: data)
             self.didReceiveHRValue?(hrMeasurement)
         default:
             break

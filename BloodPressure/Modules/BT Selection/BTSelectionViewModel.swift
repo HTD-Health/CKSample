@@ -69,7 +69,6 @@ class BTSelectionViewModel: ViewModelType {
         self.coordinator = coordinator
 
         self.bluetoothManager.devicesUpdatedHandler = { peripherals in
-            print("devices updated")
             self.peripherals = peripherals
             self.viewController?.tableView.reloadData()
         }
