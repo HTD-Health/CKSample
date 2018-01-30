@@ -5,7 +5,8 @@ class HRMeasurementCoordinator: ModalCoordinatorType {
 
     var navigationController: UINavigationController
     weak var viewController: ViewController?
-    private lazy var bluetoothManager = BluetoothManager()
+    private lazy var bluetoothManager = BTManager()
+    private lazy var rxBtManager = RxBTManager()
     private let assessment: Assessment
     private weak var childNavigationController: UINavigationController?
 
@@ -15,7 +16,7 @@ class HRMeasurementCoordinator: ModalCoordinatorType {
     }
 
     func makeViewController() -> UIViewController {
-        let viewModel = HRMeasurementViewModel(bluetoothManager: bluetoothManager, coordinator: self)
+        let viewModel = HRMeasurementViewModel(bluetoothManager: rxBtManager, coordinator: self)
         let viewController = HRMeasurementViewController(viewModel: viewModel)
         viewModel.viewController = viewController
         let childNavigationController = UINavigationController(rootViewController: viewController)

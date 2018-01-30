@@ -12,7 +12,7 @@
 		880065121FFB96C70074E6EC /* AssessmentTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880065111FFB96C70074E6EC /* AssessmentTaskViewModel.swift */; };
 		880065151FFBA8810074E6EC /* AssessmentTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880065141FFBA8810074E6EC /* AssessmentTaskViewController.swift */; };
 		880065191FFBCB460074E6EC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880065181FFBCB460074E6EC /* HealthKit.framework */; };
-		8800651B1FFD24AD0074E6EC /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800651A1FFD24AD0074E6EC /* BluetoothManager.swift */; };
+		8800651B1FFD24AD0074E6EC /* BTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800651A1FFD24AD0074E6EC /* BTManager.swift */; };
 		8802E6B420038B7C004F885E /* HeartRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802E6B320038B7C004F885E /* HeartRateTests.swift */; };
 		8802E6B620038BD6004F885E /* BTHeartRateMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802E6B520038BD6004F885E /* BTHeartRateMeasurement.swift */; };
 		881266021FED39070080C931 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881266001FED39070080C931 /* RootViewController.swift */; };
@@ -27,6 +27,7 @@
 		8845D21B1FF90EFF00F44192 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D21A1FF90EFF00F44192 /* DependencyContainer.swift */; };
 		8845D21D1FFAAAFE00F44192 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D21C1FFAAAFE00F44192 /* Activity.swift */; };
 		8845D2201FFAB74B00F44192 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8845D21F1FFAB74B00F44192 /* SampleData.swift */; };
+		884B91422020796D006B5F82 /* RxBTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884B91412020796D006B5F82 /* RxBTManager.swift */; };
 		8865CCCF1FEC0C40009633D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */; };
 		8865CCD91FEC0C40009633D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8865CCD71FEC0C40009633D1 /* LaunchScreen.storyboard */; };
 		8865CCE41FEC0C40009633D1 /* BloodPressureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865CCE31FEC0C40009633D1 /* BloodPressureTests.swift */; };
@@ -72,7 +73,7 @@
 		880065141FFBA8810074E6EC /* AssessmentTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentTaskViewController.swift; sourceTree = "<group>"; };
 		880065171FFBCB460074E6EC /* BloodPressure.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BloodPressure.entitlements; sourceTree = "<group>"; };
 		880065181FFBCB460074E6EC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		8800651A1FFD24AD0074E6EC /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		8800651A1FFD24AD0074E6EC /* BTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTManager.swift; sourceTree = "<group>"; };
 		8802E6B320038B7C004F885E /* HeartRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateTests.swift; sourceTree = "<group>"; };
 		8802E6B520038BD6004F885E /* BTHeartRateMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTHeartRateMeasurement.swift; sourceTree = "<group>"; };
 		881266001FED39070080C931 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		8845D21A1FF90EFF00F44192 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		8845D21C1FFAAAFE00F44192 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		8845D21F1FFAB74B00F44192 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		884B91412020796D006B5F82 /* RxBTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBTManager.swift; sourceTree = "<group>"; };
 		8865CCCB1FEC0C40009633D1 /* BloodPressure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloodPressure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8865CCCE1FEC0C40009633D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8865CCD81FEC0C40009633D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -161,7 +163,8 @@
 		8800651C1FFD24B40074E6EC /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				8800651A1FFD24AD0074E6EC /* BluetoothManager.swift */,
+				8800651A1FFD24AD0074E6EC /* BTManager.swift */,
+				884B91412020796D006B5F82 /* RxBTManager.swift */,
 				8802E6B520038BD6004F885E /* BTHeartRateMeasurement.swift */,
 			);
 			path = Bluetooth;
@@ -511,6 +514,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BloodPressure/Pods-BloodPressure-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CareKit/CareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ResearchKit/ResearchKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBluetoothKit/RxBluetoothKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -518,6 +522,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ResearchKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBluetoothKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -670,7 +675,8 @@
 				8845D2171FF83CB200F44192 /* SymptomTrackerViewModel.swift in Sources */,
 				8889BDC52008F69200C2A2E5 /* ViewModelType.swift in Sources */,
 				8845D21D1FFAAAFE00F44192 /* Activity.swift in Sources */,
-				8800651B1FFD24AD0074E6EC /* BluetoothManager.swift in Sources */,
+				884B91422020796D006B5F82 /* RxBTManager.swift in Sources */,
+				8800651B1FFD24AD0074E6EC /* BTManager.swift in Sources */,
 				881266021FED39070080C931 /* RootViewController.swift in Sources */,
 				881266061FED44DE0080C931 /* MainTabBarController.swift in Sources */,
 				88A68DD81FF3BCAB00C30FB5 /* App.swift in Sources */,

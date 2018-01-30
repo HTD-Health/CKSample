@@ -1,18 +1,18 @@
 import Foundation
 import CoreBluetooth
 
-protocol UUIDRepresentable {
-    var uuid: CBUUID { get }
-    var rawValue: String { get }
-}
+//protocol UUIDRepresentable {
+//    var uuid: CBUUID { get }
+//    var rawValue: String { get }
+//}
+//
+//extension UUIDRepresentable {
+//    var uuid: CBUUID {
+//        return CBUUID(string: self.rawValue)
+//    }
+//}
 
-extension UUIDRepresentable {
-    var uuid: CBUUID {
-        return CBUUID(string: self.rawValue)
-    }
-}
-
-class BluetoothManager: NSObject {
+class BTManager: NSObject {
 
     enum Service: String, UUIDRepresentable {
         case heartRate = "180D"
@@ -43,7 +43,7 @@ class BluetoothManager: NSObject {
     override init() {
         centralManager = CBCentralManager(delegate: nil, queue: nil)
         super.init()
-        centralManager.delegate = self
+        //centralManager.delegate = self
     }
 
     func connect(to peripheral: CBPeripheral) {
@@ -52,7 +52,7 @@ class BluetoothManager: NSObject {
     }
 }
 
-extension BluetoothManager: CBCentralManagerDelegate {
+extension BTManager: CBCentralManagerDelegate {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch central.state {
         case .poweredOn:
@@ -79,7 +79,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
     }
 }
 
-extension BluetoothManager: CBPeripheralDelegate {
+extension BTManager: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         peripheral.services?
             .filter { $0.uuid == Service.heartRate.uuid }
@@ -106,7 +106,7 @@ extension BluetoothManager: CBPeripheralDelegate {
     }
 }
 
-extension BluetoothManager {
+extension BTManager {
     fileprivate func addPeripheral(_ peripheral: CBPeripheral) {
         let alreadyDiscovered = discoveredPeripherals.contains { $0.identifier == peripheral.identifier }
         if !alreadyDiscovered {

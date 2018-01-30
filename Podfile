@@ -11,6 +11,7 @@ target 'BloodPressure' do
   pod 'ResearchKit',    '~> 1.5.2'
   pod 'RxSwift',        '~> 4.0'
   pod 'RxCocoa',        '~> 4.0'
+  pod 'RxBluetoothKit', '~> 4.0.0'
 
   target 'BloodPressureTests' do
     inherit! :search_paths

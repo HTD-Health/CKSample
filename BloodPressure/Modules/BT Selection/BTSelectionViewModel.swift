@@ -38,7 +38,7 @@ class BTSelectionViewModel: ViewModelType {
     typealias Coordinator = BTSelectionCoordinator
 
     let coordinator: Coordinator
-    let bluetoothManager: BluetoothManager
+    let bluetoothManager: BTManager
 
     let title = "Available HR sensors"
     let leftBarButtonItemTitle: String? = "Close"
@@ -64,7 +64,7 @@ class BTSelectionViewModel: ViewModelType {
 
     var peripherals = [PeripheralViewModel]()
 
-    init(bluetoothManager: BluetoothManager, coordinator: BTSelectionCoordinator) {
+    init(bluetoothManager: BTManager, coordinator: BTSelectionCoordinator) {
         self.bluetoothManager = bluetoothManager
         self.coordinator = coordinator
 

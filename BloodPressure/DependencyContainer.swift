@@ -2,7 +2,7 @@ import Foundation
 
 class DependencyContainer {
     private lazy var storeManager = CarePlanStoreManager()
-    private lazy var bluetoothManager = BluetoothManager()
+    private lazy var bluetoothManager = BTManager()
 }
 
 protocol SymptomTrackerFactory {
@@ -15,7 +15,7 @@ protocol CarePlanStoreFactory {
 }
 
 protocol ConnectivityFactory {
-    func makeBluetoothManager() -> BluetoothManager
+    func makeBluetoothManager() -> BTManager
 }
 
 extension DependencyContainer: CarePlanStoreFactory {
@@ -31,7 +31,7 @@ extension DependencyContainer: SymptomTrackerFactory {
 }
 
 extension DependencyContainer: ConnectivityFactory {
-    func makeBluetoothManager() -> BluetoothManager {
+    func makeBluetoothManager() -> BTManager {
         return bluetoothManager
     }
 }

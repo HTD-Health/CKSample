@@ -1,6 +1,8 @@
 PODS:
   - CareKit (1.2.1)
   - ResearchKit (1.5.2)
+  - RxBluetoothKit (4.0.2):
+    - RxSwift (~> 4.0)
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
@@ -9,6 +11,7 @@ PODS:
 DEPENDENCIES:
   - CareKit (~> 1.2.1)
   - ResearchKit (~> 1.5.2)
+  - RxBluetoothKit (~> 4.0.0)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - SwiftLint (~> 0.24.0)
@@ -16,10 +19,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   CareKit: aa0c8a57c1a2d7cfb46ff3981fe1503f02ca302e
   ResearchKit: a5770681dd61afddd3d1f24d232b9abf00cba454
+  RxBluetoothKit: 34adec556c1b3cb71f144d8477968c4f21c6aaf9
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
 
-PODFILE CHECKSUM: fa18fe6d0228fac6245b584263af1e11cfa3bba0
+PODFILE CHECKSUM: 6af3093292eec174c3a8cbfa4581e0755d67c862
 
 COCOAPODS: 1.3.1

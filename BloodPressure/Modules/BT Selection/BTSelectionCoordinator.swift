@@ -6,9 +6,9 @@ class BTSelectionCoordinator: ModalCoordinatorType {
     typealias ViewController = BTSelectionViewController
 
     let navigationController: UINavigationController
-    private let bluetoothManager: BluetoothManager
+    private let bluetoothManager: BTManager
 
-    init(navigationController: UINavigationController, bluetoothManager: BluetoothManager) {
+    init(navigationController: UINavigationController, bluetoothManager: BTManager) {
         self.navigationController = navigationController
         self.bluetoothManager = bluetoothManager
     }
