@@ -50,7 +50,7 @@ class HRMeasurementViewModel: ViewModelType {
     }
 
     func viewDidLoad() {
-        rxBTManager.startScanning(for: [.heartRate])
+        //rxBTManager.startScanning(for: [.heartRate])
     }
 
     func viewWillAppear() {

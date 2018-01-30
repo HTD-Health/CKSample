@@ -16,19 +16,19 @@ extension UUIDRepresentable {
 class RxBTManager {
     let bluetoothManager = BluetoothManager(queue: .main)
     private var scanningDisposable: Disposable?
-    private var peripherals = [ScannedPeripheral]()
+    var peripherals = Variable<[ScannedPeripheral]>([])
 
     enum Service: String, UUIDRepresentable {
         case heartRate = "180D"
     }
 
-    func startScanning(for services: [Service]) {
+    func startScanning(for services: [Service]? = nil) {
         scanningDisposable = bluetoothManager.rx_state
+            .filter { $0 == .poweredOn }
             .timeout(4.0, scheduler: MainScheduler.instance)
-            .filter { $0 == .poweredOn}
             .take(1)
             .flatMap { _ in
-                self.bluetoothManager.scanForPeripherals(withServices: services.map { $0.uuid })
+                self.bluetoothManager.scanForPeripherals(withServices: services?.map { $0.uuid })
             }
             .subscribeOn(MainScheduler.instance)
             .subscribe(onNext: { self.addNewScannedPeripheral($0) },
@@ -41,11 +41,11 @@ class RxBTManager {
     }
 
     private func addNewScannedPeripheral(_ peripheral: ScannedPeripheral) {
-        if let index = (peripherals.index { $0.peripheral == peripheral.peripheral }) {
-            peripherals[index] = peripheral
+        if let index = (peripherals.value.index { $0.peripheral == peripheral.peripheral }) {
+            peripherals.value[index] = peripheral
         } else {
-            peripherals.append(peripheral)
-            print(String(describing: peripheral.peripheral.name))
+            peripherals.value.append(peripheral)
+            //print(String(describing: peripheral.peripheral.name))
         }
     }
 }

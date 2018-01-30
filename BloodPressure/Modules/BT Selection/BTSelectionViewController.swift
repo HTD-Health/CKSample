@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class BTSelectionViewController: UITableViewController, ViewControllerType {
     typealias ViewModel = BTSelectionViewModel
+    typealias PeripheralCell = PeripheralTableViewCell
+
     let viewModel: ViewModel
+    let disposeBag = DisposeBag()
 
-    var numberOfSections: (() -> Int)?
-    var numberOfRowsInSection: ((Int) -> Int)?
-    var deviceAtIndexPath: ((IndexPath) -> PeripheralViewModel?)?
     var leftBarButtonItemHandler: (() -> Void)?
-    var didSelectRowAtIndexPath: ((IndexPath) -> Void)?
 
-    init(viewModel: BTSelectionViewModel) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,6 +30,10 @@ class BTSelectionViewController: UITableViewController, ViewControllerType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.delegate = nil
+        tableView.dataSource = nil
+        tableView.tableFooterView = UIView()
 
         title = viewModel.title
         if let leftBarButtonTitle = viewModel.leftBarButtonItemTitle {
@@ -42,31 +47,25 @@ class BTSelectionViewController: UITableViewController, ViewControllerType {
         }
 
         tableView.register(UINib.init(nibName: "PeripheralTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+
+        populatePeripheralsListTableView()
         viewModel.viewDidLoad()
 
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return numberOfSections?() ?? 0
-    }
+    private func populatePeripheralsListTableView() {
+        viewModel.scannedPeripherals.asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: PeripheralCell.self)) { (_, cellViewModel, cell) in
+                cell.viewModel = cellViewModel
+            }
+            .disposed(by: disposeBag)
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfRowsInSection?(section) ?? 0
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? PeripheralTableViewCell,
-            let device = deviceAtIndexPath?(indexPath) else { fatalError() }
-
-        cell.viewModel = PeripheralTableViewCell.ViewModel(peripheral: device)
-
-        return cell
-    }
-
-    // MARK: - UITableViewDelegate
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectRowAtIndexPath?(indexPath)
+        tableView.rx
+            .modelSelected(PeripheralViewModel.self)
+            .subscribe(onNext: { value in
+                self.viewModel.didSelectViewModel(peripheralViewModel: value)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

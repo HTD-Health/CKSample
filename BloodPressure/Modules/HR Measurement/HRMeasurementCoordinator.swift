@@ -26,7 +26,7 @@ class HRMeasurementCoordinator: ModalCoordinatorType {
 
     func presentBTSelection() {
         let btSelectionCoordinator = BTSelectionCoordinator(navigationController: childNavigationController!,
-                                                            bluetoothManager: bluetoothManager)
+                                                            bluetoothManager: rxBtManager)
         btSelectionCoordinator.start()
     }
 }

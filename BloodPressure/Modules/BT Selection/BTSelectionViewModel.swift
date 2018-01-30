@@ -1,5 +1,7 @@
 import Foundation
 import CoreBluetooth
+import RxSwift
+import RxBluetoothKit
 
 struct PeripheralViewModel {
 
@@ -23,14 +25,14 @@ struct PeripheralViewModel {
         }
     }
 
-    weak var peripheral: CBPeripheral?
+    weak var peripheral: Peripheral?
     let name: String
-    var state: State
+    let state = Variable<State>(.disconnected)
 
-    init(peripheral: CBPeripheral) {
+    init(peripheral: Peripheral) {
         name = peripheral.name ?? "Unnamed device"
         self.peripheral = peripheral
-        self.state = State(cbState: peripheral.state)
+        self.state.value = State(cbState: peripheral.state)
     }
 }
 
@@ -38,48 +40,44 @@ class BTSelectionViewModel: ViewModelType {
     typealias Coordinator = BTSelectionCoordinator
 
     let coordinator: Coordinator
-    let bluetoothManager: BTManager
+    let bluetoothManager: RxBTManager
 
     let title = "Available HR sensors"
     let leftBarButtonItemTitle: String? = "Close"
 
+    let disposeBag = DisposeBag()
+    var scannedPeripherals = Variable<[PeripheralViewModel]>([])
     weak var viewController: BTSelectionViewController? {
         didSet {
-            viewController?.numberOfSections = { return 1 }
-            viewController?.numberOfRowsInSection = { section in
-                return self.peripherals.count
-            }
-            viewController?.deviceAtIndexPath = { indexPath in
-                return self.peripherals[indexPath.row]
-            }
             viewController?.leftBarButtonItemHandler = {
                 self.coordinator.stop()
-            }
-            viewController?.didSelectRowAtIndexPath = { indexPath in
-                guard let peripheral = self.peripherals[indexPath.row].peripheral else { return }
-                self.bluetoothManager.connect(to: peripheral)
             }
         }
     }
 
     var peripherals = [PeripheralViewModel]()
 
-    init(bluetoothManager: BTManager, coordinator: BTSelectionCoordinator) {
+    init(bluetoothManager: RxBTManager, coordinator: BTSelectionCoordinator) {
         self.bluetoothManager = bluetoothManager
         self.coordinator = coordinator
-
-        self.bluetoothManager.devicesUpdatedHandler = { peripherals in
-            self.peripherals = peripherals
-            self.viewController?.tableView.reloadData()
-        }
-
-        self.bluetoothManager.didConnectHandler = { peripheral in
-            self.coordinator.stop()
-        }
     }
 
     func viewDidLoad() {
-        peripherals = bluetoothManager.discoveredPeripheralViewModels
-        self.viewController?.tableView.reloadData()
+        bluetoothManager.startScanning(for: [.heartRate])
+
+        bluetoothManager.peripherals
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { peripherals in
+                let viewModels = peripherals.map { PeripheralViewModel(peripheral: $0.peripheral) }
+                self.scannedPeripherals.value = viewModels
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func didSelectViewModel(peripheralViewModel: PeripheralViewModel) {
+        guard let peripheral = peripheralViewModel.peripheral else { return }
+
+        peripheralViewModel.state.value = .connecting
     }
 }

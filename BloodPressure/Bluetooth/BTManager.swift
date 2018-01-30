@@ -26,12 +26,12 @@ class BTManager: NSObject {
     private let centralManager: CBCentralManager
     private var discoveredPeripherals = [CBPeripheral]()
 
-    var discoveredPeripheralViewModels: [PeripheralViewModel] {
-        let peripherals = discoveredPeripherals.map {
-            return PeripheralViewModel(peripheral: $0)
-        }
-        return peripherals
-    }
+//    var discoveredPeripheralViewModels: [PeripheralViewModel] {
+//        let peripherals = discoveredPeripherals.map {
+//            return PeripheralViewModel(peripheral: $0)
+//        }
+//        return peripherals
+//    }
 
     var devicesUpdatedHandler: (([PeripheralViewModel]) -> Void)?
     var didConnectHandler: ((CBPeripheral) -> Void)?
@@ -114,7 +114,7 @@ extension BTManager {
             sortPeripherals()
             printPeripherals()
 
-            devicesUpdatedHandler?(discoveredPeripheralViewModels)
+            //devicesUpdatedHandler?(discoveredPeripheralViewModels)
         }
     }
 
