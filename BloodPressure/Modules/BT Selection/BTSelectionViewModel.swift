@@ -30,6 +30,7 @@ struct PeripheralViewModel {
     let state = Variable<State>(.disconnected)
 
     init(peripheral: Peripheral) {
+        print(#function)
         name = peripheral.name ?? "Unnamed device"
         self.peripheral = peripheral
         self.state.value = State(cbState: peripheral.state)
@@ -46,6 +47,18 @@ class BTSelectionViewModel: ViewModelType {
     let leftBarButtonItemTitle: String? = "Close"
 
     let disposeBag = DisposeBag()
+    lazy var peripherals: Observable<[PeripheralViewModel]> = {
+        bluetoothManager.peripherals
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .map {
+                $0.map {
+                    print("new peripheral")
+                    return PeripheralViewModel(peripheral: $0.peripheral)
+                }
+            }
+    }()
+
     var scannedPeripherals = Variable<[PeripheralViewModel]>([])
     weak var viewController: BTSelectionViewController? {
         didSet {
@@ -55,8 +68,6 @@ class BTSelectionViewModel: ViewModelType {
         }
     }
 
-    var peripherals = [PeripheralViewModel]()
-
     init(bluetoothManager: RxBTManager, coordinator: BTSelectionCoordinator) {
         self.bluetoothManager = bluetoothManager
         self.coordinator = coordinator
@@ -64,20 +75,21 @@ class BTSelectionViewModel: ViewModelType {
 
     func viewDidLoad() {
         bluetoothManager.startScanning(for: [.heartRate])
-
-        bluetoothManager.peripherals
-            .asObservable()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { peripherals in
-                let viewModels = peripherals.map { PeripheralViewModel(peripheral: $0.peripheral) }
-                self.scannedPeripherals.value = viewModels
-            })
-            .disposed(by: disposeBag)
     }
 
     func didSelectViewModel(peripheralViewModel: PeripheralViewModel) {
         guard let peripheral = peripheralViewModel.peripheral else { return }
-
         peripheralViewModel.state.value = .connecting
+        bluetoothManager.connect(to: peripheral)
+            .subscribe(onNext: { [weak self] (_) in
+                self?.coordinator.stop()
+            }, onError: { (error) in
+                print(error)
+            }, onCompleted: {
+                print("completed")
+            }, onDisposed: {
+                print("disposed in ViewModel")
+            })
+            .disposed(by: disposeBag)
     }
 }

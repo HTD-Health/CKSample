@@ -17,6 +17,8 @@ class RxBTManager {
     let bluetoothManager = BluetoothManager(queue: .main)
     private var scanningDisposable: Disposable?
     var peripherals = Variable<[ScannedPeripheral]>([])
+    var connectedPeripheral: Peripheral?
+    let disposeBag = DisposeBag()
 
     enum Service: String, UUIDRepresentable {
         case heartRate = "180D"
@@ -40,12 +42,24 @@ class RxBTManager {
         scanningDisposable?.dispose()
     }
 
+    func connect(to peripheral: Peripheral) -> Observable<Peripheral> {
+        let connect = peripheral.connect()
+            .share()
+
+        let resultObservable = connect
+
+        connect
+            .subscribe(onNext: { [weak self] in self?.connectedPeripheral = $0 }, onDisposed: { print("connect disposed")})
+            .disposed(by: disposeBag)
+
+        return resultObservable
+    }
+
     private func addNewScannedPeripheral(_ peripheral: ScannedPeripheral) {
         if let index = (peripherals.value.index { $0.peripheral == peripheral.peripheral }) {
-            peripherals.value[index] = peripheral
+            //peripherals.value[index] = peripheral
         } else {
             peripherals.value.append(peripheral)
-            //print(String(describing: peripheral.peripheral.name))
         }
     }
 }

@@ -28,13 +28,8 @@ class HRMeasurementViewController: UIViewController, ViewControllerType {
         super.viewDidLoad()
         title = "Heart rate"
 
-        viewModel.updateDeviceStatusHandler = { [unowned self] (status, name) in
-            self.deviceStatusLabel.text = status
-            self.deviceButton.setTitle(name, for: .normal)
-        }
-
-        viewModel.updateMeasurementStatusHandler = { [unowned self] (isRecording) in
-            self.actionButton.setTitle(isRecording ? "Finish" : "Start", for: .normal)
+        if #available(iOS 11, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
         }
 
         let hrValueDriver = viewModel.heartRateText.asDriver()

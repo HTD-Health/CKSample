@@ -54,9 +54,10 @@ class BTSelectionViewController: UITableViewController, ViewControllerType {
     }
 
     private func populatePeripheralsListTableView() {
-        viewModel.scannedPeripherals.asObservable()
+        viewModel.peripherals
             .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: PeripheralCell.self)) { (_, cellViewModel, cell) in
-                cell.viewModel = cellViewModel
+                print("Configuring cell")
+                cell.configure(with: cellViewModel)
             }
             .disposed(by: disposeBag)
 
